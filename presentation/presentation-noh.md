@@ -1,4 +1,6 @@
-slidenumbers: true
+<!-- page_number: true -->
+<!-- Rendered using Marp (https://yhatt.github.io/marp/) -->
+
 
 # Hands On Coding Workshop
 
@@ -10,9 +12,6 @@ slidenumbers: true
 * Learn about building blocks of web applications
   * Frontend (HTML, Javascript, CSS)
   * APIs and libraries
-
-
-  <!-- * Backend/server -->
 
 ---
 
@@ -27,7 +26,7 @@ slidenumbers: true
 
 ---
 
-# Hands on coding workshop
+# Hands on Coding Workshop
 
 ---
 
@@ -39,12 +38,12 @@ slidenumbers: true
 
 # Outline
 
-1. Introduction to HTML - building the skeleton of our site (Joel)
-1. Introduction to Javascript - adding interactivity to our site (Nikhil)
-1. Introduction to APIs - fetching and displaying data on the site (Arshad)
-1. Introduction to CSS - styling the site (Preston)
-1. Deploying the site to the internet (Joel)
-1. Bonus - A simple API server
+1. Introduction to HTML - building the skeleton of our site
+1. Introduction to Javascript - adding interactivity to our site
+1. Introduction to APIs - fetching and displaying data on the site
+1. Introduction to CSS - styling the site
+1. Deploying the site to the internet
+1. Challenge mode - A simple API server
 
 ---
 
@@ -66,19 +65,8 @@ slidenumbers: true
 * Open the `index.html` file in **Atom**
   * We will be editing our code in Atom
 * Open the `index.html` file in **Google Chrome**
-  * We will be able to see our progress in Chrome by refreshing the page
-
-
-
----
-
-```html
-hello
-```
-
-* Save the file and refresh the page in Chrome
-* Websites are just text files interpreted by the browser
-* HTML files specify the content that the browser should display
+  * You should see nothing on the webpage right now, as the file is empty
+  * As we progress, you will see changes you make in the file show up on Chrome by refreshing the page
 
 ---
 
@@ -87,14 +75,17 @@ hello
   hello
 </body>
 ```
-
+* Save the file and refresh the page in Chrome
+* HTML files specify the content that the browser should display
 * HTML uses tags to differentiate between different parts of the page
-* `<body>` - opening tag for the page's content
-* `</body>` - closing tag
-* Everything between opening and closing tags is the tag's content
+  * `<body>` - opening tag for the page's content
+  * `</body>` - closing tag
+  * Everything between opening and closing tags is the tag's content
 
-
-^ html, body, opening and closing tags
+<!--
+* html, body, opening and closing tags
+* Websites are just text files interpreted by the browser
+-->
 
 ---
 
@@ -103,21 +94,34 @@ hello
   hello there!
 </body>
 ```
+<!--
+encourage students to play around with the text and to try putting on different things within the tags and to see the change happen. This gives them a chance to get used to the process of saving a file, changing tabs, and hitting refresh, which is very new to a bunch of them
+-->
 
 ---
 
 ```html
 <body>
   hello
-
+  <br>
   there!
 </body>
 ```
 
 * HTML has a specific way of formatting content
 * What you see is not necessarily what you get
+* HTML does not care about your file and is merely a structure. How might you be able to make them change the file?
 
-^ html does not care about your file. just a structure
+---
+
+```html
+<body>
+  hello<br>
+  there!
+</body>
+```
+
+* Using the `br` tag
 
 ---
 
@@ -130,8 +134,11 @@ hello
 ```
 
 * The `h1` tag makes the content inside become a **header**
+* Try using the `<title>` tag
 
-^ different tags, a bit of styles
+<!--
+Tell them about h1-6 tags, and introduce title, so that they know that there is more than just a styling difference between different tags
+-->
 
 ---
 
@@ -151,7 +158,7 @@ hello
 ```
 
 * `input` creates an input box
-* `input` is a basic element, does not require a closing tag
+* `input` tags aren't designed to contain text or other elements, so there is _no_ corresponding closing tag
 
 ---
 
@@ -162,7 +169,7 @@ hello
 </body>
 ```
 
-* HTML elements/tags can have extra **attributes** given to them
+* HTML tags can have extra **attributes** given to them
 * These **attributes** can change the behaviour and appearance of the element
 
 ---
@@ -176,7 +183,26 @@ hello
 </body>
 ```
 
-`div`s are containers for content
+`div`s are containers for content. They define a division in the HTML document
+
+---
+
+# What is HTML?
+Hypertext Markup Language (HTML) is the standard **markup language** for documents designed to be displayed in a web browser.
+
+---
+## Markup Language
+A system for annotating a document in a way that is syntactically distinguishable from the text.
+
+![markuplanugage](markuplanguage.png)
+
+---
+## Hypertext
+
+Text with references (usually called hyperlinks) to other text that the reader can immediately access.
+
+![hypertext](hypertext.jpg)
+
 
 ---
 
@@ -185,9 +211,11 @@ hello
   <h1>Nearest Carpark Availability</h1>
   <input placeholder="Enter a location">
 
-  <div>Address: Blk 123</div>
-  <div>Total Lots: 456</div>
-  <div>Available Lots: 78</div>
+  <div>
+    Address: Blk 123<br>
+    Total Lots: 456<br>
+    Available Lots: 78
+  </div>
 </body>
 ```
 
@@ -213,15 +241,33 @@ Adding styles to your page!
 </body>
 ```
 
-[https://developer.mozilla.org/en-US/docs/Web/CSS/color_value](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)
+What colors can I use? Find the at [https://developer.mozilla.org/en-US/docs/Web/CSS/color_value](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)
 
+<!-- encourage the use of "color" CSS attribute to change the color of the font that they have
+-->
+
+---
+
+Work so far:
+```html
+<body style="background-color: lightskyblue">
+  <h1>Nearest Carpark Availability</h1>
+  <input placeholder="Enter a location">
+
+  <div style="color:red">
+    Address: Blk 123<br>
+    Total Lots: 456<br>
+    Available Lots: 78
+  </div>
+</body>
+```
 ---
 
 # Step 1 - A quick recap
 
-* HTML files in browser are webpages
-* HTML tells the browser what to display 
-* HTML tags, attributes
+* Webpages all require HTML files in your browser
+* HTML tells the browser what to display
+* Using HTML tags and attributes
 
 ---
 
@@ -243,12 +289,9 @@ Adding styles to your page!
 
 ```html
 <body>
-  <h1>Nearest Carpark Availability</h1>
-  <input placeholder="Enter a location">
-
-  <div>Address: Blk 123</div>
-  <div>Total Lots: 456</div>
-  <div>Available Lots: 78</div>
+  .
+  .
+  .
 </body>
 
 <script> alert("Hello!") </script>
@@ -257,15 +300,34 @@ Adding styles to your page!
 `script` content is javascript code that the browser will execute
 
 ---
+Work so far:
+```html
+<body>
+  <h1>Nearest Carpark Availability</h1>
+  <input placeholder="Enter a location">
+
+  <div>
+    Address: Blk 123<br>
+    Total Lots: 456<br>
+    Available Lots: 78
+  </div>
+</body>
+
+<script> alert("Hello!") </script>
+```
+
+---
 
 ```html
 <body>
   <h1>Nearest Carpark Availability</h1>
   <input placeholder="Enter a location">
 
-  <div>Address: Blk 123</div>
-  <div>Total Lots: 456</div>
-  <div>Available Lots: 78</div>
+  <div>
+    Address: Blk 123<br>
+    Total Lots: 456<br>
+    Available Lots: 78
+  </div>
 </body>
 
 <script src="carpark-logic.js"></script>
@@ -274,11 +336,9 @@ Adding styles to your page!
 To make it simpler, we can put the javascript code into another file
 
 ---
-
 `carpark-logic.js`
-
 ```javascript
-alert("Hello!")
+alert(3 + 10)
 ```
 
 Note: For subsequent slides, the slide title is the file you should be editing
@@ -304,9 +364,7 @@ Note: For subsequent slides, the slide title is the file you should be editing
   <h1>Nearest Carpark Availability</h1>
   <input placeholder="Enter a location">
 
-  <div id="carparkAddress"></div>
-  <div>Total Lots: 456</div>
-  <div>Available Lots: 78</div>
+  <div id="carparkInfo"></div>
 </body>
 
 <script src="carpark-logic.js"></script>
@@ -319,45 +377,26 @@ Refresh the page - the address should have disappeared
 `carpark-logic.js`
 
 ```javascript
-document.getElementById("carparkAddress").innerText =
+document.getElementById("carparkInfo").innerHTML =
   "Address: Blk 123"
 ```
 
-* `document.getElementById` gets the `carparkAddress` `div` in our HTML
-* Changing `innerText` changes the text inside the `carparkAddress` `div`
+* `document.getElementById` gets the `carparkInfo` `div` in our HTML
+* Changing `innerHTML` changes the HTML displayed inside the `carparkInfo` `div`
+* You could use `textContent` to change only the text within that `div`
 * Refresh the page and the address should reappear
-* Repeat for the parking lot information
 
----
-
-`index.html`
-
-```html
-<body>
-  <h1>Nearest Carpark Availability</h1>
-  <input placeholder="Enter a location">
-
-  <div id="carparkAddress"></div>
-  <div id="carparkTotalLots"></div>
-  <div id="carparkAvailableLots"></div>
-</body>
-
-<script src="carpark-logic.js"></script>
-```
-
-Refresh the page - total and available lots should have disappeared
+<!-- explain camel casing, point out that "Id" is spelt with capital I, small d -->
 
 ---
 
 `carpark-logic.js`
 
 ```javascript
-document.getElementById("carparkAddress").innerText =
-  "Address: Blk 123"
-document.getElementById("carparkTotalLots").innerText =
-  "Total Lots: 456"
-document.getElementById("carparkAvailableLots").innerText =
-  "Available Lots: 78"
+document.getElementById("carparkInfo").innerHTML =
+  `Address: Blk 123<br>
+  Total Lots: 456<br>
+  Available Lots: 78`
 ```
 
 Refresh the page - total and available lots should reappear
@@ -377,7 +416,7 @@ function bakeCake() {
 ```
 
 * `bakeCake` is the function name
-
+* `{` is used to denote the start of function, `}` to denote end
 ---
 
 # Introducing functions
@@ -387,13 +426,13 @@ function bakeCake() {
 ```javascript
 function bakeCake(flour, eggs) {
   preheatOven()
-  mixIngredients()
+  mixIngredients(flour, eggs)
   putInOven()
 }
 ```
 
-* `bakeCake` is the function name
 * `flour` and `eggs` are the function inputs
+* `(` denotes the start of function inputs and `)` denotes the end
 
 ---
 
@@ -401,18 +440,17 @@ function bakeCake(flour, eggs) {
 
 ```javascript
 function addCarparkToPage() {
-  document.getElementById("carparkAddress").innerText =
-    "Address: Blk 123"
-  document.getElementById("carparkTotalLots").innerText =
-    "Total Lots: 456"
-  document.getElementById("carparkAvailableLots").innerText =
-    "Available Lots: 78"
+  document.getElementById("carparkInfo").innerHTML =
+  `Address: Blk 123<br>
+  Total Lots: 456<br>
+  Available Lots: 78`
 }
 ```
 
-* Put your existing code into a function (just add the first and last line)
-* Function name is `addCarparkToPage`
-* Refresh your page - the text should disappear
+* Wrap your existing code into a function (by adding the first and last line)
+* `addCarparkToPage` is the name of this function
+* The function does not take in any inputs
+* Refresh your page - the text should disappear. Why?
 
 ---
 
@@ -420,12 +458,10 @@ function addCarparkToPage() {
 
 ```javascript
 function addCarparkToPage() {
-  document.getElementById("carparkAddress").innerText =
-    "Address: Blk 123"
-  document.getElementById("carparkTotalLots").innerText =
-    "Total Lots: 456"
-  document.getElementById("carparkAvailableLots").innerText =
-    "Available Lots: 78"
+  document.getElementById("carparkInfo").innerHTML =
+  `Address: Blk 123<br>
+  Total Lots: 456<br>
+  Available Lots: 78`
 }
 
 addCarparkToPage()
@@ -441,20 +477,18 @@ addCarparkToPage()
 
 ```javascript
 function addCarparkToPage(address, totalLots, availableLots) {
-  document.getElementById("carparkAddress").innerText =
-    "Address: " + address
-  document.getElementById("carparkTotalLots").innerText =
-    "Total Lots: " + totalLots
-  document.getElementById("carparkAvailableLots").innerText =
-    "Available Lots: " + availableLots
+  document.getElementById("carparkInfo").innerHTML =
+  `Address: ${address}<br>
+  Total Lots: ${totalLots}<br>
+  Available Lots: ${availableLots}`
 }
-
 addCarparkToPage("Blk 123", "456", "78")
 ```
 
 * Add function inputs so that we can easily change the address and parking lot information displayed
+* Try changing function inputs and refresh the page
 
-^ show how to change in console?
+<!-- whip out the console and start showing them how they can change things in there -->
 
 ---
 
@@ -471,8 +505,6 @@ addCarparkToPage("Blk 123", "456", "78")
 
 ## Reacting to user input
 
-^ Nikhil takes over here
-
 ---
 
 `index.html`
@@ -482,15 +514,13 @@ addCarparkToPage("Blk 123", "456", "78")
   <h1>Nearest Carpark Availability</h1>
   <input id="locationInput" placeholder="Enter a location">
 
-  <div id="carparkAddress"></div>
-  <div id="carparkTotalLots"></div>
-  <div id="carparkAvailableLots"></div>
+  <div id="carparkInfo"></div>
 </body>
 
 <script src="carpark-logic.js"></script>
 ```
 
-Give the input element an ID
+Give the input element an ID (`locationInput`)
 
 ---
 
@@ -521,47 +551,85 @@ function addCarparkToPage(address, totalLots, availableLots) {
   .
 }
 
-addCarparkToPage("Blk 123", "456", "78")
 
-var locationInput = document.getElementById("locationInput")
+var parkingLocation = document.getElementById("locationInput")
 ```
 
 * `var` is short for variable
-* We're saving the element into the `locationInput` variable
+* We're saving the element into the `parkingLocation` variable
 * Analogy - saving your word document into Document.docx
+
+<!-- remind them to remove `addCarparkToPage("Blk 123", "456", "78")` from their code
+-->
 
 ---
 
 `carpark-logic.js`
 
 ```javascript
-var locationInput = document.getElementById("locationInput")
+function addCarparkToPage(address, totalLots, availableLots) {
+  .
+  .
+  .
+}
 
-locationInput.addEventListener("keydown", grabLocation)
+var parkingLocation = document.getElementById("locationInput")
+
+parkingLocation.addEventListener("keydown", addCarparkToPage)
 ```
 
 
 * React to user typing in the input box by adding an **event listener** (`addEventListener`)
-* `grabLocation` is a function that will be called when the user types something (`keydown`)
+* We tell Javascript to run `addCarparkToPage` function when the user types something (`keydown`)
+* Try typing something in the input box - you should see text appear, but something is off
+
+<!-- the reason why we get them to put in the function that they have already coded up is so that they can immediately see the impact of writing the keydown event listener -->
 
 ---
 
 `carpark-logic.js`
 
 ```javascript
-var locationInput = document.getElementById("locationInput")
+function addCarparkToPage(address, totalLots, availableLots) {
+  .
+  .
+  .
+}
+
+var parkingLocation = document.getElementById("locationInput")
+
+parkingLocation.addEventListener("keydown", addCarparkToPage)
 
 function grabLocation(event) {
   addCarparkToPage("Blk 123", "456", "78")
 }
-
-locationInput.addEventListener("keydown", grabLocation)
 ```
 
-Wrap the `addCarparkToPage` function call inside a new function `grabLocation`
+Create a new function called `grabLocation` that takes in `event` as the first input and calls the `addCarparkToPage` function
 
-^ Refresh the page - the text should disappear
-^ Type into the input box - the text should reappear
+
+<!-- Nothing changes yet -->
+
+---
+
+`carpark-logic.js`
+
+```javascript
+.
+.
+.
+
+
+parkingLocation.addEventListener("keydown", grabLocation)
+
+function grabLocation(event) {
+  addCarparkToPage("Blk 123", "456", "78")
+}
+```
+
+Change the function inside from `addCarparkToPage` to `grabLocation`
+
+<!-- Type into the input box - the correct text should reappear -->
 
 ---
 
@@ -575,8 +643,26 @@ function grabLocation(event) {
 }
 ```
 
-We only want to care about when the `Enter` key is pressed
+* We only want to care about when the `Enter` key is pressed
+* `===` is how we check for equality
+* `{` once again signifies start of the conditional, `}` denotes the end
 
+---
+
+`carpark-logic.js`
+
+```javascript
+function grabLocation(event) {
+  console.log(event)
+  if (event.key === "Enter") {
+    addCarparkToPage("Blk 123", "456", "78")
+  }
+}
+```
+
+* How do engineers find out if something is going wrong
+* They print out information from their program and display it
+* On your Chrome Browser, right click, select `Inspect`, and see the output when you type into the input box
 ---
 
 # What's next
@@ -594,13 +680,14 @@ Find the input element, and extract it's content.
 ```javascript
 function grabLocation(event) {
   if (event.key === "Enter") {
-    var location = locationInput.value
+    var location = parkingLocation.value
     addCarparkToPage(location, "456", "78")
   }
 }
 ```
 
-`locationInput.value` gets the text that has been typed into the input box
+* `parkingLocation.value` gets the text that has been typed into the input box
+* pass that on to the `addCarparkToPage` function as the first variable
 
 ---
 
@@ -644,9 +731,9 @@ function grabLocation(event) {
 * Keeps our app simple!
 * Some information can only be provided by certain people/organisations (e.g. price of Bitcoin)
 
-^standing on the shoulders of giants
-^show repos for different libraries
-^show demo of opencv
+<!-- ^standing on the shoulders of giants -->
+<!-- ^show repos for different libraries -->
+<!-- ^show demo of opencv -->
 
 ---
 
@@ -656,10 +743,10 @@ function grabLocation(event) {
 
 [https://docs.onemap.sg/#onemap-rest-apis](https://docs.onemap.sg/#onemap-rest-apis)
 
-^show api documentation
-^what are parameters?
-^what happens if you change parameters? i.e. returnGeom is set to "N"?
-^show api call from browser
+<!-- ^show api documentation -->
+<!-- ^what are parameters? -->
+<!-- ^what happens if you change parameters? i.e. returnGeom is set to "N"? -->
+<!-- ^show api call from browser -->
 
 ---
 
@@ -680,7 +767,7 @@ function grabLocation(event) {
 * Use the script tag to add the `axios` library to your code
 * `head` loads our library before the rest of the page
 
-^ google "javascript request library"
+<!-- google "javascript request library" -->
 
 ---
 
@@ -691,6 +778,8 @@ function grabLocation(event) {
 ---
 
 ![original 60%](logic-flowchart-bg4.png)
+
+---
 
 `carpark-logic.js`
 
@@ -704,7 +793,7 @@ function grabLocation(event) {
 }
 
 function getXY(location) {
-  var coordinates = { 
+  var coordinates = {
     X: "1111",
     Y: "2222"
   }
@@ -717,7 +806,7 @@ function getCarpark(coordinates) {
 
 ```
 
-^Create the `getXY` and `getCarpark` function
+<!-- ^Create the `getXY` and `getCarpark` function -->
 Link the functions
 Test that coordinates are visible on front end
 
@@ -735,7 +824,7 @@ function getXY(location) {
       getAddrDetails: "N"
     }
   }).then(response => {
-    var coordinates = { 
+    var coordinates = {
       X: "1111",
       Y: "2222"
     }
@@ -761,7 +850,7 @@ function getXY(location) {
     }
   }).then(response => {
     console.log(response)
-    var coordinates = { 
+    var coordinates = {
       X: "1111",
       Y: "2222"
     }
@@ -772,8 +861,8 @@ function getXY(location) {
 ```
 What is returned by the API?
 
-^ show how developer console is linked to code base (call addCarparkToPage from console)
-^ Show response object from API in browser
+<!-- show how developer console is linked to code base (call addCarparkToPage from console) -->
+<!-- Show response object from API in browser -->
 
 ---
 
@@ -887,9 +976,7 @@ Call the `getNearestCarparkTo(...)` function from Joel's library
   <h1>Nearest Carpark Availability</h1>
   <input id="locationInput" placeholder="Enter a location">
 
-  <div id="carparkAddress"></div>
-  <div id="carparkTotalLots"></div>
-  <div id="carparkAvailableLots"></div>
+  <div id="carparkInfo"></div>
 </body>
 
 <script src="carpark-library.js"></script>
@@ -910,9 +997,7 @@ Call the `getNearestCarparkTo(...)` function from Joel's library
   <h1>Nearest Carpark Availability</h1>
   <input id="locationInput" placeholder="Enter a location">
 
-  <div id="carparkAddress"></div>
-  <div id="carparkTotalLots"></div>
-  <div id="carparkAvailableLots"></div>
+  <div id="carparkInfo"></div>
 </body>
 
 <script src="carpark-library.js"></script>
@@ -1199,8 +1284,8 @@ app.listen(3000, function () {
 * Listen to "`/`"
 * When "`/`" is requested, send `Hello` as the response
 
-^ i.e. my phone number is 98765432
-^ i.e. when someone calls me at 98765432, say Hello
+<!-- i.e. my phone number is 98765432 -->
+<!-- i.e. when someone calls me at 98765432, say Hello -->
 
 ---
 
@@ -1260,9 +1345,7 @@ app.listen(3000, function () {
   <h1>Nearest Carpark Availability</h1>
   <input id="locationInput" placeholder="Enter a location">
 
-  <div id="carparkAddress"></div>
-  <div id="carparkTotalLots"></div>
-  <div id="carparkAvailableLots"></div>
+  <div id="carparkInfo"></div>
 </body>
 
 <script src="carpark-library.js"></script>
@@ -1285,9 +1368,7 @@ Delete the highlighted line
   <h1>Nearest Carpark Availability</h1>
   <input id="locationInput" placeholder="Enter a location">
 
-  <div id="carparkAddress"></div>
-  <div id="carparkTotalLots"></div>
-  <div id="carparkAvailableLots"></div>
+  <div id="carparkInfo"></div>
 </body>
 
 <script src="carpark-logic.js"></script>
