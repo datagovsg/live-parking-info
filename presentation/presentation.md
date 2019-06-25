@@ -20,13 +20,7 @@ General tips for presenters:
 
 ---
 
-# Who are we?
-
-Open Government Products, GovTech
-
-- Software Engineers
-- Designers
-- Product Managers
+# [Open Government Products](https://docs.google.com/presentation/d/1elZPsJ_yze2bRcQ5DVNYjz2NbryRgMS8_caogi1JiEk/edit#slide=id.g4de465b1ea_0_34)
 
 --- 
 
@@ -302,14 +296,16 @@ Work so far:
 ---
 
 ```html
+<head>
+  <script src="carpark-logic.js"></script>
+</head>
+
 <body>
   <h1>Nearest Carpark Availability</h1>
   <input placeholder="Enter a location">
 
   <div>123 / 456 lots available at Blk 789</div>
 </body>
-
-<script src="carpark-logic.js"></script>
 ```
 
 To make it simpler, we can put the javascript code into another file
@@ -730,6 +726,7 @@ Try the following:
 ```html
 <head>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="carpark-logic.js"></script>
 </head>
 
 <body>
@@ -738,12 +735,10 @@ Try the following:
   .
 </body>
 
-<script src="carpark-logic.js"></script>
 ```
 
 * How do we make these requests? Using a library!
 * Use the script tag to add the `axios` library to your code
-* `head` loads our library before the rest of the page
 
 ^show them what the minified version of the code looks like in the link
 
@@ -816,17 +811,18 @@ async function insertLocation(event) {
 ```html
 <head>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="carpark-library.js"></script>
+  <script src="carpark-logic.js"></script>
 </head>
 
 <body>
   ...
 </body>
 
-<script src="carpark-library.js"></script>
-<script src="carpark-logic.js"></script>
 ```
 
 Add `carpark-library.js` to your code
+* `head` tag loads our library before the rest of the page
 
 ---
 
@@ -888,6 +884,8 @@ async function insertLocation(event) {
 ```html
 <head>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="carpark-library.js"></script>
+  <script src="carpark-logic.js"></script>
   <link rel="stylesheet" type="text/css" href="carpark-style.css"></link>
 </head>
 
@@ -897,9 +895,6 @@ async function insertLocation(event) {
 
   <div id="carparkInfo"></div>
 </body>
-
-<script src="carpark-library.js"></script>
-<script src="carpark-logic.js"></script>
 ```
 
 ---
@@ -1052,5 +1047,3 @@ If you're done and would like a little more of a challenge, try doing these:
 - Loading information takes time. Is there any way we can give the user visual feedback while they're waiting?
 - Can we show additional information for the nearest carpark? Can we display an icon based on carpark type?
 - Can we show the three nearest carparks instead of only one?
-
----
