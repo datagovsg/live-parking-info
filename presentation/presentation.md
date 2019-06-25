@@ -1,18 +1,41 @@
 slidenumbers: true
+<!-- Rendered using Deckset -->
 
-# Hands On Coding Workshop
+<!--
+General tips for presenters:
+- Repeat things twice. People don't get you the first time. This is all very foreign
+- Explain even the simplest of things, like === and the difference between ) and }
+-
+-->
+
+<!-- stuff you need on your machine before class
+- chrome parser
+- Visual Studio Code, with auto complete disabled ONLY ON THE HTML
+- pdf of the slides
+- empty repo with images
+-
+-->
+
+# Introduction to Webapp Development
 
 ---
 
+# Who are we?
+
+Open Government Products, GovTech
+
+- Software Engineers
+- Designers
+- Product Managers
+
+--- 
+
 # Objectives
 
-* Learn more about iterative product development
+* Learn more about digital product development
 * Learn about building blocks of web applications
   * Frontend (HTML, Javascript, CSS)
   * APIs and libraries
-
-
-  <!-- * Backend/server -->
 
 ---
 
@@ -27,7 +50,7 @@ slidenumbers: true
 
 ---
 
-# Hands on coding workshop
+# Hands on Coding Workshop
 
 ---
 
@@ -39,46 +62,32 @@ slidenumbers: true
 
 # Outline
 
-1. Introduction to HTML - building the skeleton of our site (Joel)
-1. Introduction to Javascript - adding interactivity to our site (Nikhil)
-1. Introduction to APIs - fetching and displaying data on the site (Arshad)
-1. Introduction to CSS - styling the site (Preston)
-1. Deploying the site to the internet (Joel)
-1. Bonus - A simple API server
+1. Introduction to HTML - building the skeleton of our site
+1. Introduction to Javascript - adding interactivity to our site
+1. Introduction to APIs - fetching and displaying data on the site
+1. Introduction to CSS - styling the site
+1. Deploying the site to the internet
 
 ---
 
 # Before we begin
 
-* Slides are provided as handouts
-* You can also refer to digital copy of the slides
+* Refer to `presentation/presentation.pdf` for the slides
+* Go into `student-folder/` to get started
 
 ---
 
 # Step 1 - Displaying some text
 
-![inline](01.png)
-
 ---
 
 # Setup
 
-* Open the `index.html` file in **Atom**
-  * We will be editing our code in Atom
+* Open the `index.html` file in **Visual Studio Code**
+  * We will be editing our code in Visual Studio Code
 * Open the `index.html` file in **Google Chrome**
-  * We will be able to see our progress in Chrome by refreshing the page
-
-
-
----
-
-```html
-hello
-```
-
-* Save the file and refresh the page in Chrome
-* Websites are just text files interpreted by the browser
-* HTML files specify the content that the browser should display
+  * You should see nothing on the webpage right now, as the file is empty
+  * As we progress, you will see changes you make in the file show up on Chrome by refreshing the page
 
 ---
 
@@ -87,14 +96,17 @@ hello
   hello
 </body>
 ```
-
+* Save the file and refresh the page in Chrome
+* HTML files specify the content that the browser should display
 * HTML uses tags to differentiate between different parts of the page
-* `<body>` - opening tag for the page's content
-* `</body>` - closing tag
-* Everything between opening and closing tags is the tag's content
+  * `<body>` - opening tag for the page's content
+  * `</body>` - closing tag
 
 
-^ html, body, opening and closing tags
+<!--
+* html, body, opening and closing tags
+* Websites are just text files interpreted by the browser
+-->
 
 ---
 
@@ -103,6 +115,9 @@ hello
   hello there!
 </body>
 ```
+<!--
+encourage students to play around with the text and to try putting on different things within the tags and to see the change happen. This gives them a chance to get used to the process of saving a file, changing tabs, and hitting refresh, which is very new to a bunch of them
+-->
 
 ---
 
@@ -117,11 +132,9 @@ hello
 * HTML has a specific way of formatting content
 * What you see is not necessarily what you get
 
-^ html does not care about your file. just a structure
-
 ---
 
-```html, [.highlight: 2]
+```html
 <body>
   <h1>hello</h1>
 
@@ -130,8 +143,11 @@ hello
 ```
 
 * The `h1` tag makes the content inside become a **header**
+* Try using the `<title>` tag
 
-^ different tags, a bit of styles
+<!--
+Tell them about h1-6 tags, and introduce title, so that they know that there is more than just a styling difference between different tags
+-->
 
 ---
 
@@ -143,7 +159,7 @@ hello
 
 ---
 
-```html, [.highlight: 3]
+```html
 <body>
   <h1>Nearest Carpark Availability</h1>
   <input>
@@ -151,23 +167,23 @@ hello
 ```
 
 * `input` creates an input box
-* `input` is a basic element, does not require a closing tag
+* `input` tags aren't designed to contain text or other elements, so there is _no_ corresponding closing tag
 
 ---
 
-```html, [.highlight: 3]
+```html
 <body>
   <h1>Nearest Carpark Availability</h1>
   <input placeholder="Enter a location">
 </body>
 ```
 
-* HTML elements/tags can have extra **attributes** given to them
+* HTML tags can have extra **attributes** given to them
 * These **attributes** can change the behaviour and appearance of the element
 
 ---
 
-```html, [.highlight: 5]
+```html
 <body>
   <h1>Nearest Carpark Availability</h1>
   <input placeholder="Enter a location">
@@ -176,7 +192,7 @@ hello
 </body>
 ```
 
-`div`s are containers for content
+`div`s are containers that are used to organise and arrange content
 
 ---
 
@@ -185,19 +201,29 @@ hello
   <h1>Nearest Carpark Availability</h1>
   <input placeholder="Enter a location">
 
-  <div>Address: Blk 123</div>
-  <div>Total Lots: 456</div>
-  <div>Available Lots: 78</div>
+  <div>123 / 456 lots available at Blk 789</div>
 </body>
 ```
 
-`div`s can be used to organise and arrange content
+---
+
+# What is HTML?
+Hypertext Markup Language (HTML) is the standard **markup language** for documents designed to be displayed in a web browser.
 
 ---
 
-# Result
+## Hypertext
 
-![inline](01.png)
+Text with references (usually called hyperlinks) to other text that the reader can immediately access.
+
+![inline](hypertext.jpg)
+
+---
+
+## Markup Language
+A system for annotating a document in a way that is syntactically distinguishable from the text.
+
+![inline](markuplanguage.png)
 
 ---
 
@@ -213,15 +239,34 @@ Adding styles to your page!
 </body>
 ```
 
-[https://developer.mozilla.org/en-US/docs/Web/CSS/color_value](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)
+What colors can I use? Find the at [https://developer.mozilla.org/en-US/docs/Web/CSS/color_value](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)
+
+<!-- encourage the use of "color" CSS attribute to change the color of the font that they have
+-->
+
+---
+
+
+Work so far:
+
+```html
+<body style="background-color: lightskyblue">
+  <h1>Nearest Carpark Availability</h1>
+  <input placeholder="Enter a location">
+
+  <div style="color:red">123 / 456 lots available at Blk 789</div>
+</body>
+```
+
+* Future code will not have `style` tags, for simplicity
 
 ---
 
 # Step 1 - A quick recap
 
-* HTML files in browser are webpages
-* HTML tells the browser what to display 
-* HTML tags, attributes
+* Webpages all require HTML files in your browser
+* HTML tells the browser what to display
+* Using HTML tags and attributes
 
 ---
 
@@ -241,14 +286,12 @@ Adding styles to your page!
 
 ---
 
-```html, [.highlight: 10]
+```html
 <body>
   <h1>Nearest Carpark Availability</h1>
   <input placeholder="Enter a location">
 
-  <div>Address: Blk 123</div>
-  <div>Total Lots: 456</div>
-  <div>Available Lots: 78</div>
+  <div>123 / 456 lots available at Blk 789</div>
 </body>
 
 <script> alert("Hello!") </script>
@@ -258,14 +301,12 @@ Adding styles to your page!
 
 ---
 
-```html, [.highlight: 10]
+```html
 <body>
   <h1>Nearest Carpark Availability</h1>
   <input placeholder="Enter a location">
 
-  <div>Address: Blk 123</div>
-  <div>Total Lots: 456</div>
-  <div>Available Lots: 78</div>
+  <div>123 / 456 lots available at Blk 789</div>
 </body>
 
 <script src="carpark-logic.js"></script>
@@ -278,11 +319,12 @@ To make it simpler, we can put the javascript code into another file
 `carpark-logic.js`
 
 ```javascript
-alert("Hello!")
+alert(3 + 10)
 ```
 
-Note: For subsequent slides, the slide title is the file you should be editing
+* What do you see?
 
+Note: For subsequent slides, the slide title is the file you should be editing
 
 ---
 
@@ -290,27 +332,26 @@ Note: For subsequent slides, the slide title is the file you should be editing
 
 * We need to be able to replace the address and parking lot information dynamically based on what the user searches
 * We can do that by using Javascript to:
-  1. Find the `div` for carpark address
+  1. Find the `div` with carpark info
   1. Change the text inside the `div`
-  1. Repeat for parking lot information
-* To find the correct `div` for Step 1, we need to give the `div` an ID!
+* To find the correct `div` for Step 1, we need to give the `div` an identifier!
 
 ---
 
 `index.html`
 
-```html, [.highlight: 5]
+```html
 <body>
   <h1>Nearest Carpark Availability</h1>
   <input placeholder="Enter a location">
 
-  <div id="carparkAddress"></div>
-  <div>Total Lots: 456</div>
-  <div>Available Lots: 78</div>
+  <div id="carparkInfo"></div>
 </body>
 
 <script src="carpark-logic.js"></script>
 ```
+
+* Change the `div` tag to remove the text and add an `id`
 
 Refresh the page - the address should have disappeared
 
@@ -319,48 +360,15 @@ Refresh the page - the address should have disappeared
 `carpark-logic.js`
 
 ```javascript
-document.getElementById("carparkAddress").innerText =
-  "Address: Blk 123"
+document.getElementById("carparkInfo").innerText = "No lots available at Blk 789"
 ```
 
-* `document.getElementById` gets the `carparkAddress` `div` in our HTML
-* Changing `innerText` changes the text inside the `carparkAddress` `div`
-* Refresh the page and the address should reappear
-* Repeat for the parking lot information
+<!-- explain camel casing, point out that "Id" is spelt with capital I, small d -->
 
----
-
-`index.html`
-
-```html, [.highlight: 5-7]
-<body>
-  <h1>Nearest Carpark Availability</h1>
-  <input placeholder="Enter a location">
-
-  <div id="carparkAddress"></div>
-  <div id="carparkTotalLots"></div>
-  <div id="carparkAvailableLots"></div>
-</body>
-
-<script src="carpark-logic.js"></script>
-```
-
-Refresh the page - total and available lots should have disappeared
-
----
-
-`carpark-logic.js`
-
-```javascript
-document.getElementById("carparkAddress").innerText =
-  "Address: Blk 123"
-document.getElementById("carparkTotalLots").innerText =
-  "Total Lots: 456"
-document.getElementById("carparkAvailableLots").innerText =
-  "Available Lots: 78"
-```
-
-Refresh the page - total and available lots should reappear
+* `document.getElementById` gets the `carparkInfo` `div` in our HTML
+* Changing `innerText` changes the HTML displayed inside the `carparkInfo`'s `div`
+* Be precise with your spelling and casing - computers are quite unforgiving!
+* Refresh the page and your text should reappear
 
 ---
 
@@ -377,6 +385,7 @@ function bakeCake() {
 ```
 
 * `bakeCake` is the function name
+* `{` is used to denote the start of function, `}` to denote end
 
 ---
 
@@ -387,13 +396,13 @@ function bakeCake() {
 ```javascript
 function bakeCake(flour, eggs) {
   preheatOven()
-  mixIngredients()
+  mixIngredients(flour, eggs)
   putInOven()
 }
 ```
 
-* `bakeCake` is the function name
 * `flour` and `eggs` are the function inputs
+* `(` denotes the start of function inputs and `)` denotes the end
 
 ---
 
@@ -401,31 +410,22 @@ function bakeCake(flour, eggs) {
 
 ```javascript
 function addCarparkToPage() {
-  document.getElementById("carparkAddress").innerText =
-    "Address: Blk 123"
-  document.getElementById("carparkTotalLots").innerText =
-    "Total Lots: 456"
-  document.getElementById("carparkAvailableLots").innerText =
-    "Available Lots: 78"
+  document.getElementById("carparkInfo").innerText = "No lots available at Blk 789"
 }
 ```
 
-* Put your existing code into a function (just add the first and last line)
-* Function name is `addCarparkToPage`
-* Refresh your page - the text should disappear
+* Wrap your existing code into a function (by adding the first and last line)
+* `addCarparkToPage` is the name of this function
+* The function does not take in any inputs
+* When you refresh your page, the text disappears. Why?
 
 ---
 
 `carpark-logic.js`
 
-```javascript, [.highlight: 10]
+```javascript
 function addCarparkToPage() {
-  document.getElementById("carparkAddress").innerText =
-    "Address: Blk 123"
-  document.getElementById("carparkTotalLots").innerText =
-    "Total Lots: 456"
-  document.getElementById("carparkAvailableLots").innerText =
-    "Available Lots: 78"
+  document.getElementById("carparkInfo").innerText = "No lots available at Blk 789"
 }
 
 addCarparkToPage()
@@ -440,21 +440,34 @@ addCarparkToPage()
 `carpark-logic.js`
 
 ```javascript
-function addCarparkToPage(address, totalLots, availableLots) {
-  document.getElementById("carparkAddress").innerText =
-    "Address: " + address
-  document.getElementById("carparkTotalLots").innerText =
-    "Total Lots: " + totalLots
-  document.getElementById("carparkAvailableLots").innerText =
-    "Available Lots: " + availableLots
+
+function addCarparkToPage(address) {
+  document.getElementById("carparkInfo").innerText = "No lots available at " + address
+
 }
 
-addCarparkToPage("Blk 123", "456", "78")
+addCarparkToPage("Blk 000")
+```
+
+* Add one function input to take in an address
+* Try changing function inputs and refresh the page
+
+---
+
+`carpark-logic.js`
+
+```javascript
+function addCarparkToPage(availableLots, totalLots, address) {
+  document.getElementById("carparkInfo").innerText = availableLots + " / " + totalLots + " lots available at " + address
+}
+
+addCarparkToPage("123", "456", "Blk 789")
 ```
 
 * Add function inputs so that we can easily change the address and parking lot information displayed
+* Try changing function inputs and refresh the page
 
-^ show how to change in console?
+<!-- whip out the console and start showing them how they can change things in there -->
 
 ---
 
@@ -471,39 +484,34 @@ addCarparkToPage("Blk 123", "456", "78")
 
 ## Reacting to user input
 
-^ Nikhil takes over here
-
 ---
 
 `index.html`
 
-```html, [.highlight: 3]
+```html
 <body>
   <h1>Nearest Carpark Availability</h1>
   <input id="locationInput" placeholder="Enter a location">
 
-  <div id="carparkAddress"></div>
-  <div id="carparkTotalLots"></div>
-  <div id="carparkAvailableLots"></div>
+  <div id="carparkInfo"></div>
 </body>
 
 <script src="carpark-logic.js"></script>
 ```
 
-Give the input element an ID
+Give the input element the `locationInput` identifier
 
 ---
 
 `carpark-logic.js`
 
-```javascript, [.highlight: 9]
+```javascript
 function addCarparkToPage(address, totalLots, availableLots) {
-  .
   .
   .
 }
 
-addCarparkToPage("Blk 123", "456", "78")
+addCarparkToPage("123", "456", "Blk 789")
 
 document.getElementById("locationInput")
 ```
@@ -514,68 +522,98 @@ Retrieve the input element using its ID
 
 `carpark-logic.js`
 
-```javascript, [.highlight: 9]
+```javascript
 function addCarparkToPage(address, totalLots, availableLots) {
   .
   .
-  .
 }
 
-addCarparkToPage("Blk 123", "456", "78")
+addCarparkToPage("123", "456", "Blk 789")
 
-var locationInput = document.getElementById("locationInput")
+var parkingLocation = document.getElementById("locationInput")
 ```
 
 * `var` is short for variable
-* We're saving the element into the `locationInput` variable
+* We're saving the element into the `parkingLocation` variable
 * Analogy - saving your word document into Document.docx
 
----
-
-`carpark-logic.js`
-
-```javascript, [.highlight: 3]
-var locationInput = document.getElementById("locationInput")
-
-locationInput.addEventListener("keydown", grabLocation)
-```
-
-
-* React to user typing in the input box by adding an **event listener** (`addEventListener`)
-* `grabLocation` is a function that will be called when the user types something (`keydown`)
+<!-- remind them to remove `addCarparkToPage("Blk 789", "456", "78")` from their code
+-->
 
 ---
 
 `carpark-logic.js`
 
-```javascript, [.highlight: 1-7]
-var locationInput = document.getElementById("locationInput")
-
-function grabLocation(event) {
-  addCarparkToPage("Blk 123", "456", "78")
+```javascript
+function addCarparkToPage(address, totalLots, availableLots) {
+  .
+  .
 }
 
-locationInput.addEventListener("keydown", grabLocation)
+var parkingLocation = document.getElementById("locationInput")
+
+parkingLocation.addEventListener("keydown", addCarparkToPage)
 ```
 
-Wrap the `addCarparkToPage` function call inside a new function `grabLocation`
+* Remove the `addCarparkToPage("123", "456", "Blk 789")` and add the event listener
+* React to user typing in the input box by adding an **event listener** (`addEventListener`)
+* We tell Javascript to run `addCarparkToPage` function when the user types something (`keydown`)
+* Try typing something in the input box - you should see text appear, but something is off
 
-^ Refresh the page - the text should disappear
-^ Type into the input box - the text should reappear
+<!-- the reason why we get them to put in the function that they have already coded up is so that they can immediately see the impact of writing the keydown event listener -->
 
 ---
 
 `carpark-logic.js`
 
-```javascript, [.highlight: 2-4]
-function grabLocation(event) {
+[.code-highlight: 7-12]
+
+```javascript
+function addCarparkToPage(address, totalLots, availableLots) {
+  .
+  .
+}
+
+var parkingLocation = document.getElementById("locationInput")
+
+parkingLocation.addEventListener("keydown", insertLocation)
+
+function insertLocation(event) {
+  addCarparkToPage("123", "456", "Blk 789")
+}
+```
+
+---
+
+`insertLocation` in `carpark-logic.js`
+
+```javascript
+function insertLocation(event) {
   if (event.key === "Enter") {
-    addCarparkToPage("Blk 123", "456", "78")
+    addCarparkToPage("123", "456", "Blk 789")
   }
 }
 ```
 
-We only want to care about when the `Enter` key is pressed
+* We only want to care about when the `Enter` key is pressed
+* `===` is an equality check
+* `{` once again signifies start of the conditional and `}` denotes the end
+
+---
+
+`insertLocation` in `carpark-logic.js`
+
+```javascript
+function insertLocation(event) {
+  console.log(event)
+  if (event.key === "Enter") {
+    addCarparkToPage("123", "456", "Blk 789")
+  }
+}
+```
+
+* What if you wanted to use some other key?
+* On your Chrome Browser, right click, select `Inspect`, and see the output when you type into the input box
 
 ---
 
@@ -585,22 +623,23 @@ Now we need to get the location that we typed in.
 
 We can do that in a similar way to how we injected the text.
 
-Find the input element, and extract it's content.
+Find the input element, and extract its content.
 
 ---
 
-`carpark-logic.js`
+`insertLocation` in `carpark-logic.js`
 
-```javascript, [.highlight: 3-4]
-function grabLocation(event) {
+```javascript
+function insertLocation(event) {
   if (event.key === "Enter") {
-    var location = locationInput.value
-    addCarparkToPage(location, "456", "78")
+    var searchLocation = parkingLocation.value
+    addCarparkToPage(searchLocation, "456", "78")
   }
 }
 ```
 
-`locationInput.value` gets the text that has been typed into the input box
+* `parkingLocation.value` gets the text that has been typed into the input box
+* pass that on to the `addCarparkToPage` function as the first variable
 
 ---
 
@@ -613,6 +652,7 @@ function grabLocation(event) {
 ---
 
 # What's next?
+
 
 ![inline](logic-flowchart-steps.png)
 
@@ -644,9 +684,16 @@ function grabLocation(event) {
 * Keeps our app simple!
 * Some information can only be provided by certain people/organisations (e.g. price of Bitcoin)
 
-^standing on the shoulders of giants
+
 ^show repos for different libraries
 ^show demo of opencv
+
+---
+
+# Demo of OpenCV
+
+* We can stand on the shoulders of giants by using these libraries
+* Value adding instead of rebuilding
 
 ---
 
@@ -656,181 +703,117 @@ function grabLocation(event) {
 
 [https://docs.onemap.sg/#onemap-rest-apis](https://docs.onemap.sg/#onemap-rest-apis)
 
-^show api documentation
-^what are parameters?
-^what happens if you change parameters? i.e. returnGeom is set to "N"?
-^show api call from browser
+<!-- ^show api documentation -->
+<!-- ^what are parameters? -->
+<!-- ^what happens if you change parameters? i.e. returnGeom is set to "N"? -->
 
 ---
 
+Go to [https://developers.onemap.sg/commonapi/search?searchVal=revenue&returnGeom=Y&getAddrDetails=Y&pageNum=1](https://developers.onemap.sg/commonapi/search?searchVal=revenue&returnGeom=Y&getAddrDetails=Y&pageNum=1)
+
+Try the following:
+
+* change the `searchVal` to Jurong
+* change the `returnGeom` to N
+* change `getAddrDetails` to N
+* Note which parameters are required and which are optional
+* Note accepted values for returnGeom and getAddrDetails
+
+---
+
+<!-- google "javascript request library" -->
+
 `index.html`
 
-```html, [.highlight: 1-3]
+[.code-highlight: 1-3]
+
+```html
 <head>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
-  ...
+  .
+  .
+  .
 </body>
 
 <script src="carpark-logic.js"></script>
 ```
 
+* How do we make these requests? Using a library!
 * Use the script tag to add the `axios` library to your code
 * `head` loads our library before the rest of the page
 
-^ google "javascript request library"
+^show them what the minified version of the code looks like in the link
 
 ---
 
-# Let's sketch out our logic
+`insertLocation` in `carpark-logic.js`
 
-![inline](logic-flowchart-func.png)
-
----
-
-![original 60%](logic-flowchart-bg4.png)
-
-`carpark-logic.js`
-
-```javascript, [.highlight: 4, 7-18]
-
-function grabLocation(event) {
+```javascript
+function insertLocation(event) {
   if (event.key === "Enter") {
-    var location = locationInput.value
-    getXY(location)
+    var searchLocation = locationInput.value
+    var url = "https://developers.onemap.sg/commonapi/search?searchVal=" + searchLocation + "&returnGeom=Y&getAddrDetails=N"
+    console.log(url)
   }
 }
-
-function getXY(location) {
-  var coordinates = { 
-    X: "1111",
-    Y: "2222"
-  }
-  getCarpark(coordinates)
-}
-
-function getCarpark(coordinates) {
-  addCarparkToPage(coordinates.X, coordinates.Y, "78")
-}
-
 ```
 
-^Create the `getXY` and `getCarpark` function
+* Click on the link in the console. Does it give you the correct information?
+
+<!-- ^Create the `getXY` and `getCarpark` function
 Link the functions
 Test that coordinates are visible on front end
+-->
 
 ---
+`insertLocation` in `carpark-logic.js`
 
-`carpark-logic.js`
+[.code-highlight: 1, 5]
+[.code-highlight: all]
 
-```javascript, [.highlight: 2-8, 14]
-
-function getXY(location) {
-  axios.get("https://developers.onemap.sg/commonapi/search", {
-    params: {
-      searchVal: location,
-      returnGeom: "Y",
-      getAddrDetails: "N"
-    }
-  }).then(response => {
-    var coordinates = { 
-      X: "1111",
-      Y: "2222"
-    }
-    getCarpark(coordinates)
-  })
-}
-
-```
-Make the API call
-
----
-
-`carpark-logic.js`
-
-```javascript, [.highlight: 9]
-
-function getXY(location) {
-  axios.get("https://developers.onemap.sg/commonapi/search", {
-    params: {
-      searchVal: location,
-      returnGeom: "Y",
-      getAddrDetails: "N"
-    }
-  }).then(response => {
+```javascript
+async function insertLocation(event) {
+  if (event.key === "Enter") {
+    var searchLocation = locationInput.value
+    var url = "https://developers.onemap.sg/commonapi/search?searchVal=" + searchLocation + "&returnGeom=Y&getAddrDetails=N"
+    var response = await axios.get(url)
     console.log(response)
-    var coordinates = { 
-      X: "1111",
-      Y: "2222"
-    }
-    getCarpark(coordinates)
-  })
+  }
 }
-
 ```
-What is returned by the API?
-
-^ show how developer console is linked to code base (call addCarparkToPage from console)
-^ Show response object from API in browser
+* Where is the information within the object?
 
 ---
 
-`carpark-logic.js`
+`insertLocation` in `carpark-logic.js`
 
-```javascript, [.highlight: 10]
-function getXY(location) {
-  axios.get("https://developers.onemap.sg/commonapi/search", {
-    params: {
-      searchVal: location,
-      returnGeom: "Y",
-      getAddrDetails: "N"
-    }
-  }).then(response => {
-    console.log(response)
-    var coordinates = response.data.results[0]
-    getCarpark(coordinates)
-  })
+[.code-highlight: 6]
+```javascript
+async function insertLocation(event) {
+  if (event.key === "Enter") {
+    var searchLocation = locationInput.value
+    var url = "https://developers.onemap.sg/commonapi/search?searchVal=" + searchLocation + "&returnGeom=Y&getAddrDetails=N"
+    var response = await axios.get(url)
+    console.log(response.data.results[0])
+  }
 }
 ```
-
-Extract the coordinates from the `response`
-
----
-
-`carpark-logic.js`
-
-```javascript, [.highlight: 10]
-function getXY(location) {
-  axios.get("https://developers.onemap.sg/commonapi/search", {
-    params: {
-      searchVal: location,
-      returnGeom: "Y",
-      getAddrDetails: "N"
-    }
-  }).then(response => {
-    var coordinates = response.data.results[0]
-    console.log(coordinates)
-    getCarpark(coordinates)
-  })
-}
-```
-
-`console.log` the X and Y coordinates for us to check that it is correct
 
 ---
 
 # What's next
 
 * Now we want to get the nearest carpark to that X and Y value
-* Slightly too complicated for now, so we can use a library that Joel wrote
+* Slightly too complicated for now, so we've written a library to help with that
 
 ---
 
 `index.html`
 
-```html, [.highlight: 9]
+```html
 <head>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
@@ -847,24 +830,48 @@ Add `carpark-library.js` to your code
 
 ---
 
-`carpark-logic.js`
+`insertLocation` in `carpark-logic.js`
 
-```javascript, [.highlight: 2-4]
-function getCarpark(coordinates) {
-  getNearestCarparkTo(coordinates.X, coordinates.Y).then(carpark => {
-    addCarparkToPage(carpark.address, carpark.total_lots, carpark.lots_available)
-  })
+```javascript
+async function insertLocation(event) {
+  if (event.key === "Enter") {
+    var searchLocation = locationInput.value
+    var url = "https://developers.onemap.sg/commonapi/search?searchVal=" + searchLocation + "&returnGeom=Y&getAddrDetails=N"
+    var response = await axios.get(url)
+    var nearestLocation = response.data.results[0]
+    var carpark = await getNearestCarparkTo(nearestLocation.X, nearestLocation.Y)
+    console.log(carpark)
+  }
 }
 ```
-
-Call the `getNearestCarparkTo(...)` function from Joel's library
+* Call the `getNearestCarparkTo(...)` function and provide it with X and Y coordinates
+* What does `carpark` hold?
 
 ---
+
+`insertLocation` in `carpark-logic.js`
+
+```javascript
+async function insertLocation(event) {
+  if (event.key === "Enter") {
+    var searchLocation = locationInput.value
+    var url = "https://developers.onemap.sg/commonapi/search?searchVal=" + searchLocation + "&returnGeom=Y&getAddrDetails=N"
+    var response = await axios.get(url)
+    var nearestLocation = response.data.results[0]
+    var carpark = await getNearestCarparkTo(nearestLocation.X, nearestLocation.Y)
+    addCarparkToPage(carpark.address, carpark.total_lots, carpark.lots_available)
+  }
+}
+
+```
+
+---
+
 
 # Recap
 
 * Made API call to convert location to X and Y
-* Use library function to get the nearest carpark
+* Used library function to get the nearest carpark
 
 ---
 
@@ -877,7 +884,8 @@ Call the `getNearestCarparkTo(...)` function from Joel's library
 
 `index.html`
 
-```html, [.highlight: 3]
+[.code-highlight: 3]
+```html
 <head>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <link rel="stylesheet" type="text/css" href="carpark-style.css"></link>
@@ -887,32 +895,7 @@ Call the `getNearestCarparkTo(...)` function from Joel's library
   <h1>Nearest Carpark Availability</h1>
   <input id="locationInput" placeholder="Enter a location">
 
-  <div id="carparkAddress"></div>
-  <div id="carparkTotalLots"></div>
-  <div id="carparkAvailableLots"></div>
-</body>
-
-<script src="carpark-library.js"></script>
-<script src="carpark-logic.js"></script>
-```
-
----
-
-`index.html`
-
-```html, [.highlight: 6, 7, 8]
-<head>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="carpark-style.css"></link>
-</head>
-
-<body>
-  <h1>Nearest Carpark Availability</h1>
-  <input id="locationInput" placeholder="Enter a location">
-
-  <div id="carparkAddress"></div>
-  <div id="carparkTotalLots"></div>
-  <div id="carparkAvailableLots"></div>
+  <div id="carparkInfo"></div>
 </body>
 
 <script src="carpark-library.js"></script>
@@ -923,7 +906,7 @@ Call the `getNearestCarparkTo(...)` function from Joel's library
 
 `carpark-style.css`
 
-```css, [.highlight: 1-4, 9]
+```css
 body {
   background-image: url("background-image.png");
   background-size: cover;
@@ -936,36 +919,14 @@ body {
 
 ```
 
-Style the `body` - add background image
+* Style the `body`
+* Add each line one at a time and see the change
 
 ---
 
 `carpark-style.css`
 
-```css, [.highlight: 6-8]
-body {
-  background-image: url("background-image.png");
-  background-size: cover;
-  background-position: center;
-
-  text-align: center;
-  color: #F2F2F2;
-  margin-top: 10%;
-}
-
-```
-
-Style the `body` - font and margin
-
----
-
-`carpark-style.css`
-
-```css, [.highlight: 5-7]
-body {
-  /* ... */
-}
-
+```css
 h1 {
   font-size: 64px;
 }
@@ -979,11 +940,7 @@ Style the `h1`
 
 `carpark-style.css`
 
-```css, [.highlight: 5-12]
-h1 {
-  /* ... */
-}
-
+```css
 input {
   font-size: 20px;
 
@@ -1000,7 +957,7 @@ Style the `input` (search box)
 
 `carpark-style.css`
 
-```css, [.highlight: 1, 11]
+```css
 @import url('https://fonts.googleapis.com/css?family=Mandali');
 
 body {
@@ -1024,11 +981,7 @@ Import a font package from fonts.google.com
 
 `carpark-style.css`
 
-```css, [.highlight: 5-12]
-input {
-  /* ... */
-}
-
+```css
 @media only screen  
   and (max-device-width: 480px) {
 
@@ -1092,240 +1045,12 @@ input {
 
 ---
 
-# Bonus Material
-## Building your own simple API server
+# Challenge Mode
+
+If you're done and would like a little more of a challenge, try doing these:
+
+- Loading information takes time. Is there any way we can give the user visual feedback while they're waiting?
+- Can we show additional information for the nearest carpark? Can we display an icon based on carpark type?
+- Can we show the three nearest carparks instead of only one?
 
 ---
-
-# Next Step - Building your own API
-
-* Build a simple backend to serve a simple API
-* We'll replace my helper API with a real API
-
----
-
-Create a new file called `backend.js`
-
-`backend.js`
-
-```javascript
-var express = require("express")
-
-var app = express()
-
-app.listen(3000, function () {
-  console.log("Server running...")
-})
-```
-
-* Open the command line (TAs can help!)
-* Type `node backend.js` and hit enter
-* You should see `Server running...`
-
----
-
-`backend.js`
-
-```javascript, [.highlight: 1]
-var express = require("express")
-
-var app = express()
-
-app.listen(3000, function () {
-  console.log("Server running...")
-})
-```
-
-* Importing `express`, a lightweight server
-
----
-
-`backend.js`
-
-```javascript, [.highlight: 3]
-var express = require("express")
-
-var app = express()
-
-app.listen(3000, function () {
-  console.log("Server running...")
-})
-```
-
-* Creating our server
-
----
-
-`backend.js`
-
-```javascript, [.highlight: 5]
-var express = require("express")
-
-var app = express()
-
-app.listen(3000, function () {
-  console.log("Server running...")
-})
-```
-
-* Running our server - start listening to requests
-
----
-
-Right now your server is listening, but doesn't respond to any requests.
-
-You've set up a phone, but you're not answering any calls.
-
-**Next step: make your server respond to incoming requests.**
-
----
-
-`backend.js`
-
-```javascript, [.highlight: 5-7]
-var express = require("express")
-
-var app = express()
-
-app.get("/", function (req, res) {
-  res.send("Hello")
-})
-
-app.listen(3000, function () {
-  console.log("Server running...")
-})
-```
-
-* Listen to "`/`"
-* When "`/`" is requested, send `Hello` as the response
-
-^ i.e. my phone number is 98765432
-^ i.e. when someone calls me at 98765432, say Hello
-
----
-
-`backend.js`
-
-```javascript, [.highlight: 2, 7-10]
-var express = require("express")
-var getNearestCarparkTo = require("./carpark-library.js")
-
-var app = express()
-
-app.get("/", function (req, res) {
-  getNearestCarparkTo(req.query.x, req.query.y).then(carpark => {
-    res.set("Access-Control-Allow-Origin", "*")
-    res.send(carpark)
-  })
-})
-```
-
-* Send the `x` and `y` values to the helper API
-* Helper API responds with the nearest carpark
-* Take the carpark and send it back to the requester
-
----
-
-`backend.js`
-
-```javascript
-var express = require("express")
-var getNearestCarparkTo = require("./carpark-library.js")
-
-var app = express()
-
-app.get("/", function (req, res) {
-  getNearestCarparkTo(req.query.x, req.query.y).then(carpark => {
-    res.set("Access-Control-Allow-Origin", "*")
-    res.send(carpark)
-  })
-})
-
-app.listen(3000, function () {
-  console.log("Server running...")
-})
-```
-
----
-
-`index.html`
-
-```html, [.highlight: 15]
-<head>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="carpark-style.css"></link>
-</head>
-
-<body>
-  <h1>Nearest Carpark Availability</h1>
-  <input id="locationInput" placeholder="Enter a location">
-
-  <div id="carparkAddress"></div>
-  <div id="carparkTotalLots"></div>
-  <div id="carparkAvailableLots"></div>
-</body>
-
-<script src="carpark-library.js"></script>
-<script src="carpark-logic.js"></script>
-```
-
-Delete the highlighted line
-
----
-
-`index.html`
-
-```html
-<head>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="carpark-style.css"></link>
-</head>
-
-<body>
-  <h1>Nearest Carpark Availability</h1>
-  <input id="locationInput" placeholder="Enter a location">
-
-  <div id="carparkAddress"></div>
-  <div id="carparkTotalLots"></div>
-  <div id="carparkAvailableLots"></div>
-</body>
-
-<script src="carpark-logic.js"></script>
-```
-
-Refresh the page - the search should no longer be working
-
----
-
-`carpark-logic.js`
-
-```javascript, [.highlight: 2-4]
-function getCarpark(coordinates) {
-  getNearestCarparkTo(coordinates.X, coordinates.Y).then(carpark => {
-    addCarparkToPage(carpark.address, carpark.total_lots, carpark.lots_available)
-  })
-}
-```
-
-Delete the highlighted lines
-
----
-
-`carpark-logic.js`
-
-```javascript, [.highlight: 2-11]
-function getCarpark(coordinates) {
-  var url = "http://localhost:3000"
-  axios.get(url, {
-    params: {
-      x: coordinates.X,
-      y: coordinates.Y
-    }
-  }).then(carpark => {
-    var carpark = response.data
-    addCarparkToPage(carpark.address, carpark.total_lots, carpark.lots_available)
-  })
-}
-```
-
-Set up `carpark-logic` to use our backend API
