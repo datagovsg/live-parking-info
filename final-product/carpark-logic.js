@@ -2,11 +2,6 @@ function addCarparkToPage(address, totalLots, availableLots) {
   document.getElementById("carparkInfo").innerText = availableLots + " / " + totalLots + " lots available at " + address
 }
 
-function changeIconBasedOnCarParkType(carparkType) {
-  document.getElementById("logo").src = ''
-}
-
-
 var locationInput = document.getElementById("locationInput")
 
 locationInput.addEventListener("keydown", insertLocation)
