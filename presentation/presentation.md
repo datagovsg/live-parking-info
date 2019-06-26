@@ -79,22 +79,54 @@ General tips for presenters:
 
 * Open the `index.html` file in **Visual Studio Code**
   * We will be editing our code in Visual Studio Code
+  * This is a text editor designed for coding
 * Open the `index.html` file in **Google Chrome**
   * You should see nothing on the webpage right now, as the file is empty
   * As we progress, you will see changes you make in the file show up on Chrome by refreshing the page
 
+
 ---
+
+# Screenshot of the text editor
+
+---
+
+# Screenshot of chrome open up
+
+---
+
+# What is HTML?
+Hypertext Markup Language (HTML) is the standard **markup language** for documents designed to be displayed in a web browser.
+
+---
+
+## Hypertext
+
+Text with references (usually called hyperlinks) to other text that the reader can immediately access.
+
+![inline](hypertext.jpg)
+
+---
+
+## Markup Language
+A system for annotating a document in a way that is syntactically distinguishable from the text.
+
+![inline](markuplanguage.png)
+
+---
+
+`Visual Studio Code`
 
 ```html
 <body>
   hello
 </body>
+
 ```
+* Write the above text in the Visual Studio Code
 * Save the file and refresh the page in Chrome
-* HTML files specify the content that the browser should display
 * HTML uses tags to differentiate between different parts of the page
-  * `<body>` - opening tag for the page's content
-  * `</body>` - closing tag
+* `<body>` - opening tag for the page's content and `</body>` is the closing tag
 
 
 <!--
@@ -128,6 +160,7 @@ encourage students to play around with the text and to try putting on different 
 
 ---
 
+[.code-highlight: 2]
 ```html
 <body>
   <h1>hello</h1>
@@ -137,11 +170,23 @@ encourage students to play around with the text and to try putting on different 
 ```
 
 * The `h1` tag makes the content inside become a **header**
-* Try using the `<title>` tag
+* Try using `h2` instead and see the difference
 
 <!--
 Tell them about h1-6 tags, and introduce title, so that they know that there is more than just a styling difference between different tags
 -->
+
+---
+
+```html
+<body>
+  <title>Carparks!</title>
+  <h1>hello</h1>
+
+  there!
+</body>
+```
+* Optional: try using the `<title>` tag
 
 ---
 
@@ -175,6 +220,10 @@ Tell them about h1-6 tags, and introduce title, so that they know that there is 
 * HTML tags can have extra **attributes** given to them
 * These **attributes** can change the behaviour and appearance of the element
 
+<!-- 
+* we're going to create hint text here so that there. Shadow text
+* in technical speak, this is called a placeholder
+-->
 ---
 
 ```html
@@ -201,26 +250,6 @@ Tell them about h1-6 tags, and introduce title, so that they know that there is 
 
 ---
 
-# What is HTML?
-Hypertext Markup Language (HTML) is the standard **markup language** for documents designed to be displayed in a web browser.
-
----
-
-## Hypertext
-
-Text with references (usually called hyperlinks) to other text that the reader can immediately access.
-
-![inline](hypertext.jpg)
-
----
-
-## Markup Language
-A system for annotating a document in a way that is syntactically distinguishable from the text.
-
-![inline](markuplanguage.png)
-
----
-
 # A short detour
 
 Adding styles to your page!
@@ -235,8 +264,7 @@ Adding styles to your page!
 
 What colors can I use? Find the at [https://developer.mozilla.org/en-US/docs/Web/CSS/color_value](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)
 
-<!-- encourage the use of "color" CSS attribute to change the color of the font that they have
--->
+<!-- encourage the use of "color" CSS attribute to change the color of the font that they have -->
 
 ---
 
@@ -252,7 +280,7 @@ Work so far:
 </body>
 ```
 
-* Future code will not have `style` tags, for simplicity
+* Future code will not have `style` attributes for simplicity
 
 ---
 
@@ -279,6 +307,13 @@ Work so far:
 | Javascript   | Brain    | Behaviour/actions   |
 
 ---
+# What is Javascript?
+
+* Programming language for the Web
+* Update and change both HTML and CSS
+* Calculate, manipulate and validate data
+
+---
 
 ```html
 <body>
@@ -296,28 +331,26 @@ Work so far:
 ---
 
 ```html
-<head>
-  <script src="carpark-logic.js"></script>
-</head>
-
 <body>
   <h1>Nearest Carpark Availability</h1>
   <input placeholder="Enter a location">
 
   <div>123 / 456 lots available at Blk 789</div>
 </body>
+
+<script src="carpark-logic.js"></script>
 ```
 
-To make it simpler, we can put the javascript code into another file
+We will split up Javascript and HTML code by writing Javascript in `carpark-logic.js`
 
 ---
-
 `carpark-logic.js`
 
 ```javascript
 alert(3 + 10)
 ```
-
+* Open up `carpark-logic.js` file in your text editor
+* Write the code above in that file and save it
 * What do you see?
 
 Note: For subsequent slides, the slide title is the file you should be editing
@@ -348,8 +381,7 @@ Note: For subsequent slides, the slide title is the file you should be editing
 ```
 
 * Change the `div` tag to remove the text and add an `id`
-
-Refresh the page - the address should have disappeared
+* Save the file and refresh the page - the address should have disappeared
 
 ---
 
@@ -364,7 +396,7 @@ document.getElementById("carparkInfo").innerText = "No lots available at Blk 789
 * `document.getElementById` gets the `carparkInfo` `div` in our HTML
 * Changing `innerText` changes the HTML displayed inside the `carparkInfo`'s `div`
 * Be precise with your spelling and casing - computers are quite unforgiving!
-* Refresh the page and your text should reappear
+* Save this file and refresh the page and your text should reappear
 
 ---
 
@@ -487,7 +519,7 @@ addCarparkToPage("123", "456", "Blk 789")
 ```html
 <body>
   <h1>Nearest Carpark Availability</h1>
-  <input id="locationInput" placeholder="Enter a location">
+  <input placeholder="Enter a location" id="locationInput">
 
   <div id="carparkInfo"></div>
 </body>
@@ -518,6 +550,7 @@ Retrieve the input element using its ID
 
 `carpark-logic.js`
 
+[.code-highlight:8]
 ```javascript
 function addCarparkToPage(address, totalLots, availableLots) {
   .
@@ -533,13 +566,13 @@ var parkingLocation = document.getElementById("locationInput")
 * We're saving the element into the `parkingLocation` variable
 * Analogy - saving your word document into Document.docx
 
-<!-- remind them to remove `addCarparkToPage("Blk 789", "456", "78")` from their code
--->
+<!-- remind them to remove `addCarparkToPage("Blk 789", "456", "78")` from their code -->
 
 ---
 
 `carpark-logic.js`
 
+[.code-highlight:8]
 ```javascript
 function addCarparkToPage(address, totalLots, availableLots) {
   .
@@ -601,7 +634,7 @@ function insertLocation(event) {
 
 ```javascript
 function insertLocation(event) {
-  console.log(event)
+  console.log(event.key)
   if (event.key === "Enter") {
     addCarparkToPage("123", "456", "Blk 789")
   }
@@ -726,7 +759,6 @@ Try the following:
 ```html
 <head>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="carpark-logic.js"></script>
 </head>
 
 <body>
@@ -735,6 +767,7 @@ Try the following:
   .
 </body>
 
+<script src="carpark-logic.js"></script>
 ```
 
 * How do we make these requests? Using a library!
@@ -811,14 +844,14 @@ async function insertLocation(event) {
 ```html
 <head>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="carpark-library.js"></script>
-  <script src="carpark-logic.js"></script>
 </head>
 
 <body>
   ...
 </body>
 
+<script src="carpark-library.js"></script>
+<script src="carpark-logic.js"></script>
 ```
 
 Add `carpark-library.js` to your code
@@ -884,9 +917,6 @@ async function insertLocation(event) {
 ```html
 <head>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="carpark-library.js"></script>
-  <script src="carpark-logic.js"></script>
-  <link rel="stylesheet" type="text/css" href="carpark-style.css"></link>
 </head>
 
 <body>
@@ -895,6 +925,10 @@ async function insertLocation(event) {
 
   <div id="carparkInfo"></div>
 </body>
+
+<script src="carpark-library.js"></script>
+<script src="carpark-logic.js"></script>
+<link rel="stylesheet" type="text/css" href="carpark-style.css"></link>
 ```
 
 ---
