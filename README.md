@@ -4,7 +4,5 @@ All information contained in this folder can be accessed from Github on the foll
 
 ## Folder structure
 
-- final-product: What you would have created by the end of the course
-- image-recognition: A demonstration run by the instructors to showcase the use of libraries
+- student: The starting folder for you as a student
 - presentation: The presentation and images used by the instructors
-- student-folder: The starting folder for you as a student 

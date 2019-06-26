@@ -5,15 +5,14 @@ slidenumbers: true
 General tips for presenters:
 - Repeat things twice. People don't get you the first time. This is all very foreign
 - Explain even the simplest of things, like === and the difference between ) and }
--
+- Toggle between the final product and the current product so that they know how what you're building is contributing to the final product
+
 -->
 
 <!-- stuff you need on your machine before class
 - chrome parser
-- Visual Studio Code, with auto complete disabled ONLY ON THE HTML
+- Visual Studio Code
 - pdf of the slides
-- empty repo with images
--
 -->
 
 # Introduction to Webapp Development
@@ -30,7 +29,7 @@ General tips for presenters:
 * Learn about building blocks of web applications
   * Frontend (HTML, Javascript, CSS)
   * APIs and libraries
-
+* Be unafraid of code and engineers
 ---
 
 # Overview
@@ -64,10 +63,24 @@ General tips for presenters:
 
 ---
 
+# What to expect
+
+This is a fast paced introduction to web technologies that covers a lot of ground in a very short time
+
+* You may not understand everything by the end of the course
+* You don't need to become a proficient coder to understand the basics of web
+
+---
+# How we help you
+- We have many instructors from diverse backgrounds, so ask them questions
+- All material is available online at https://github.com/datagovsg/live-parking-info
+
+---
+
 # Before we begin
 
 * Refer to `presentation/presentation.pdf` for the slides
-* Go into `student-folder/` to get started
+* Go into `student/` folder to get started
 
 ---
 
@@ -79,19 +92,14 @@ General tips for presenters:
 
 * Open the `index.html` file in **Visual Studio Code**
   * We will be editing our code in Visual Studio Code
-  * This is a text editor designed for coding
+  * This is a text editor (similar to Notepad) designed for coding
 * Open the `index.html` file in **Google Chrome**
   * You should see nothing on the webpage right now, as the file is empty
   * As we progress, you will see changes you make in the file show up on Chrome by refreshing the page
 
-
 ---
 
-# Screenshot of the text editor
-
----
-
-# Screenshot of chrome open up
+![inline](visual-studio-code.png)
 
 ---
 
@@ -101,7 +109,6 @@ Hypertext Markup Language (HTML) is the standard **markup language** for documen
 ---
 
 ## Hypertext
-
 Text with references (usually called hyperlinks) to other text that the reader can immediately access.
 
 ![inline](hypertext.jpg)
@@ -111,11 +118,9 @@ Text with references (usually called hyperlinks) to other text that the reader c
 ## Markup Language
 A system for annotating a document in a way that is syntactically distinguishable from the text.
 
-![inline](markuplanguage.png)
+TODO: Show real html code and the corresponding render
 
 ---
-
-`Visual Studio Code`
 
 ```html
 <body>
@@ -123,15 +128,13 @@ A system for annotating a document in a way that is syntactically distinguishabl
 </body>
 
 ```
-* Write the above text in the Visual Studio Code
+* Write the above text in the Visual Studio Code text editor
 * Save the file and refresh the page in Chrome
 * HTML uses tags to differentiate between different parts of the page
 * `<body>` - opening tag for the page's content and `</body>` is the closing tag
 
-
 <!--
-* html, body, opening and closing tags
-* Websites are just text files interpreted by the browser
+* Can we choose what we want to call the tag or does it have to be <body>?
 -->
 
 ---
@@ -303,8 +306,10 @@ Work so far:
 | Term         | Metaphor | Function            |
 |--------------|----------|---------------------|
 | HTML         | Skeleton | Structure           |
-| CSS (styles) | Skin     | Styling, formatting |
+| CSS (styles) | Skin / Clothes     | Styling, formatting |
 | Javascript   | Brain    | Behaviour/actions   |
+
+<!-- analogy of a house, with structure, interior design, and smarts -->
 
 ---
 # What is Javascript?
@@ -714,8 +719,10 @@ function insertLocation(event) {
 * Some information can only be provided by certain people/organisations (e.g. price of Bitcoin)
 
 
-^show repos for different libraries
-^show demo of opencv
+<!-- 
+show repos for different libraries
+show demo of opencv
+ -->
 
 ---
 
@@ -732,22 +739,40 @@ function insertLocation(event) {
 
 [https://docs.onemap.sg/#onemap-rest-apis](https://docs.onemap.sg/#onemap-rest-apis)
 
-<!-- ^show api documentation -->
-<!-- ^what are parameters? -->
-<!-- ^what happens if you change parameters? i.e. returnGeom is set to "N"? -->
+<!-- show api documentation -->
+<!-- what are parameters? -->
+<!-- what happens if you change parameters? i.e. returnGeom is set to "N"? -->
 
 ---
 
 Go to [https://developers.onemap.sg/commonapi/search?searchVal=revenue&returnGeom=Y&getAddrDetails=Y&pageNum=1](https://developers.onemap.sg/commonapi/search?searchVal=revenue&returnGeom=Y&getAddrDetails=Y&pageNum=1)
 
 Try the following:
+- In the URL, change `jurong` to `toa payoh`
+- change the `Y` to `N`
 
-* change the `searchVal` to Jurong
-* change the `returnGeom` to N
-* change `getAddrDetails` to N
-* Note which parameters are required and which are optional
-* Note accepted values for returnGeom and getAddrDetails
+Note which parameters are required and which are optional, and which are accepted values for returnGeom and getAddrDetails
 
+---
+
+`insertLocation` in `carpark-logic.js`
+
+```javascript
+function insertLocation(event) {
+  if (event.key === "Enter") {
+    var searchLocation = locationInput.value
+    var url = "https://developers.onemap.sg/commonapi/search?searchVal=" + searchLocation + "&returnGeom=Y&getAddrDetails=N"
+    console.log(url)
+  }
+}
+```
+
+* Click on the link in the console. Does it give you the correct information?
+
+<!-- Create the `getXY` and `getCarpark` function
+Link the functions
+Test that coordinates are visible on front end
+-->
 ---
 
 <!-- google "javascript request library" -->
@@ -770,31 +795,10 @@ Try the following:
 <script src="carpark-logic.js"></script>
 ```
 
-* How do we make these requests? Using a library!
+* `axios` is how we tell the browser to retrieve the information we want
 * Use the script tag to add the `axios` library to your code
 
-^show them what the minified version of the code looks like in the link
-
----
-
-`insertLocation` in `carpark-logic.js`
-
-```javascript
-function insertLocation(event) {
-  if (event.key === "Enter") {
-    var searchLocation = locationInput.value
-    var url = "https://developers.onemap.sg/commonapi/search?searchVal=" + searchLocation + "&returnGeom=Y&getAddrDetails=N"
-    console.log(url)
-  }
-}
-```
-
-* Click on the link in the console. Does it give you the correct information?
-
-<!-- ^Create the `getXY` and `getCarpark` function
-Link the functions
-Test that coordinates are visible on front end
--->
+<!-- show them what the minified version of the code looks like in the link -->
 
 ---
 `insertLocation` in `carpark-logic.js`
@@ -841,6 +845,7 @@ async function insertLocation(event) {
 
 `index.html`
 
+[.code-highlight: 10]
 ```html
 <head>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -850,12 +855,11 @@ async function insertLocation(event) {
   ...
 </body>
 
-<script src="carpark-library.js"></script>
 <script src="carpark-logic.js"></script>
+<script src="carpark-library.js"></script>
 ```
 
 Add `carpark-library.js` to your code
-* `head` tag loads our library before the rest of the page
 
 ---
 
@@ -1037,7 +1041,7 @@ Import a font package from fonts.google.com
 | Term         | Metaphor | Function            |
 |--------------|----------|---------------------|
 | HTML         | Skeleton | Structure           |
-| CSS (styles) | Skin     | Styling, formatting |
+| CSS (styles) | Skin / Clothes     | Styling, formatting |
 | Javascript   | Brain    | Behaviour/actions   |
 
 ---
