@@ -6,7 +6,9 @@ General tips for presenters:
 - Repeat things twice. People don't get you the first time. This is all very foreign
 - Explain even the simplest of things, like === and the difference between ) and }
 - Toggle between the final product and the current product so that they know how what you're building is contributing to the final product
-
+- Write comments in your code so that they know what is happening after you stop talking 
+- Make sure you highlight the code changes you have made
+- Don't answer questions about technical stuff with more jargon than before
 -->
 
 <!-- stuff you need on your machine before class
@@ -816,8 +818,10 @@ async function insertLocation(event) {
   }
 }
 ```
+* We `await` for the response from the API, cause that takes time
 * Where is the information within the object?
 
+<!-- Just like when you ask for people who are going to make  -->
 ---
 
 `insertLocation` in `carpark-logic.js`
