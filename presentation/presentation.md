@@ -11,12 +11,6 @@ General tips for presenters:
 - Don't answer questions about technical stuff with more jargon than before
 -->
 
-<!-- stuff you need on your machine before class
-- chrome parser
-- Visual Studio Code
-- pdf of the slides
--->
-
 # Introduction to Webapp Development
 
 ---
@@ -93,10 +87,10 @@ This is a fast paced introduction to web technologies that covers a lot of groun
 
 # Setup
 
-* Open the `index.html` file in **Visual Studio Code**
+* `index.html` file should be open in **Visual Studio Code**
   * We will be editing our code in Visual Studio Code
   * This is a text editor (similar to Notepad) designed for coding
-* Open the `index.html` file in **Google Chrome**
+* `index.html` file should also be open in **Google Chrome**
   * You should see nothing on the webpage right now, as the file is empty
   * As we progress, you will see changes you make in the file show up on Chrome by refreshing the page
 
@@ -121,7 +115,7 @@ Text with references (usually called hyperlinks) to other text that the reader c
 ## Markup Language
 A system for annotating a document in a way that is syntactically distinguishable from the text.
 
-TODO: Show real html code and the corresponding render
+![inline](html.png)
 
 ---
 
@@ -748,7 +742,7 @@ show demo of opencv
 
 ---
 
-Go to [https://developers.onemap.sg/commonapi/search?searchVal=revenue&returnGeom=Y&getAddrDetails=Y&pageNum=1](https://developers.onemap.sg/commonapi/search?searchVal=revenue&returnGeom=Y&getAddrDetails=Y&pageNum=1)
+Go to [https://developers.onemap.sg/commonapi/search?searchVal=jurong&returnGeom=Y&getAddrDetails=Y&pageNum=1](https://developers.onemap.sg/commonapi/search?searchVal=revenue&returnGeom=Y&getAddrDetails=Y&pageNum=1)
 
 Try the following:
 - In the URL, change `jurong` to `toa payoh`
@@ -922,7 +916,7 @@ async function insertLocation(event) {
 
 `index.html`
 
-[.code-highlight: 3]
+[.code-highlight: 14]
 ```html
 <head>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
