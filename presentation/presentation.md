@@ -32,6 +32,7 @@ General tips for presenters:
   * Frontend (HTML, Javascript, CSS)
   * APIs and libraries
 * Be unafraid of code and engineers
+
 ---
 
 # Overview
