@@ -1,0 +1,32 @@
+{
+  "name": "live-parking-info",
+  "version": "1.0.0",
+  "description": "All information contained in this folder can be accessed from Github on the following link: https://github.com/datagovsg/live-parking-info",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "prettier --write '**/!(bundle).+(js|html)'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/datagovsg/live-parking-info.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/datagovsg/live-parking-info/issues"
+  },
+  "homepage": "https://github.com/datagovsg/live-parking-info#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "cors": "^2.8.5",
+    "csv-parse": "^4.4.3",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "eslint-config-google": "^0.13.0",
+    "nodemon": "^1.19.1",
+    "prettier": "1.18.2"
+  }
+}

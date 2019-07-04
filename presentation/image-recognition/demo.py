@@ -6,7 +6,6 @@ cap.set(4, 480) #HEIGHT
 
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
-
 while(True):
     # Capture frame-by-frame
     ret, frame = cap.read()
