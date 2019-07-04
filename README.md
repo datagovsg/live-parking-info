@@ -18,3 +18,13 @@ All information contained in this folder can be accessed from Github on the foll
 - go to VSCode and open the `student` folder as a project, with index.html as the current file
 - open up the `presentation.pdf`
 - Install JSON Formatter Chrome Extension
+
+## Attribution
+
+This course is distributed under the MIT license. While you are free to use it and create derivative works as you see fit, 
+we would love to be duly attributed. This could be done by flashing a slide at the workshop that describes who we are, accompanied with a short verbal statement crediting us as the original authors.
+
+## Get in touch
+
+If you are interested in working with us to improve digital literacy in government and the nation, 
+we would love to hear from you! Reach us at https://open.gov.sg/contact-us/
