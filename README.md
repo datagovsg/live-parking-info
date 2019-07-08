@@ -18,7 +18,7 @@ Have the following installed before starting the course:
     - Toggle word wrap
 - A modern web browser such as Chrome, Firefox, Safari
     - Have a JSON Formatter/parser extension installed
-- This repository (click on the green download button on the top right hand corner)
+- This repository (click on the green "Clone or Download" button on the top right hand corner)
 
 ### API Design
 
