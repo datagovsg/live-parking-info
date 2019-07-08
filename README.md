@@ -10,6 +10,7 @@ If you have any feedback to provide, or are interested in collaborating, [reach 
 - presentation: The presentation used during the course 
   - image-recognition: OpenCV demo using Python
   - final-product: What you'll have at the end of the course
+- dist: Swagger API documentation files that can be viewed on https://opengovsg.github.io/live-parking-info
 
 ## Participant pre-requisites
 Have the following installed before starting the course:
