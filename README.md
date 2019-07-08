@@ -2,7 +2,7 @@
 
 This repository is course content for the [Understanding Web Development Course](https://www.cscollege.gov.sg/programmes/pages/display%20programme.aspx?epid=88mh6oplhphm3pdmkhkcpp5smo) created and run by the [Open Government Products](open.gov.sg) team. 
 
-If you have any feedback to provide, or are interested in collaborating, [reach out](https://open.gov.sg/contact-us/). We're actively looking for ways to make this course sustainable and eventually scalable.
+If you have any feedback to provide, or are interested in collaborating, [reach out](https://open.gov.sg/contact-us/). We're actively looking for ways to make this course sustainable and scalable.
 
 ## Folder structure
 
