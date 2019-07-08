@@ -13,17 +13,16 @@
 - Less changing of screens from slides to code to browser - trainers know what to look at but participants don't, and hence they cannot keep up.
 - make sure that the content is easily copy-pasted over
 - explain more high level concepts, they don't need to write code, they just need to be able to speak to vendors more confidently
-
+- bigger printed out notes so that people don't confuse ) and } and ]?
+  
 Latest feedback from conversation with Doris, Director Executive Programs, CSC:
 - State explicitly the myths you want to debunk
 - It's helpful for people to type in code and see how the autocomplete helps you in programming
-- 
 - showing cause and effect with the code that they write
-- the big picture of how coding is done. What software are you using
-- there is a lot of software in the world, why do we use what we use?
-- download learn
-- Evan is working on something with David Eaves for directors and above
-- video the sharing, send it out
+- They should learn about the bigger picture of how coding is done. What software are you using? Did you have a choice? If you did, why did you choose what you did?
+- Try out the LEARN app
+- GovTech is working on something with David Eaves for directors and above to participate in 
+- Record the sharing over video and send it out to folks
 - explain why your team is valuable through the course
 
 ## Feedback that has been addressed
@@ -38,3 +37,4 @@ Latest feedback from conversation with Doris, Director Executive Programs, CSC:
 - put the javascript and css into the same page as the html code so that they don't need to toggle between files
 - change stuff to make sure that they don't appear, then tell them to make it disappear, then reappear it
 - Write comments in your code so that they know what is happening after you stop talking 
+- every milestone that the user does should be a change so that they know what the impact of writing the code is. Cause and effect should be made clear and explicit

@@ -5,7 +5,7 @@ slidenumbers: true
 
 ---
 
-## Brought to you by [Open Government Products](https://docs.google.com/presentation/d/1elZPsJ_yze2bRcQ5DVNYjz2NbryRgMS8_caogi1JiEk/edit#slide=id.g4de465b1ea_0_34)
+## Designed by [Open Government Products](https://docs.google.com/presentation/d/1elZPsJ_yze2bRcQ5DVNYjz2NbryRgMS8_caogi1JiEk/edit#slide=id.g4de465b1ea_0_34)
 
 --- 
 
@@ -23,7 +23,7 @@ This is a fast paced introduction to web technologies that covers a lot of groun
 * We don't expect you to walk out as proficient coders, only with an appreciation of how websites work
 * We encourage you to experiment and to ask questions
 
-All material is available online at [github.com/datagovsg/live-parking-info](https://github.com/datagovsg/live-parking-info)
+All material is available online at [github.com/opengovsg/live-parking-info](https://github.com/opengovsg/live-parking-info)
 
 ---
 
@@ -46,26 +46,37 @@ All material is available online at [github.com/datagovsg/live-parking-info](htt
 # Where to find material on your computer
 
 * Refer to `presentation/presentation.pdf` for the slides
-* Go into `student/` folder to get started
+* Go into `student [start here]/` folder to get started
 
 ---
 
 # Setup
 
-* `index.html` file should be open in **Visual Studio Code**
-  * We will be editing our code in Visual Studio Code
-  * This is a text editor (similar to Notepad) designed for coding
-* `index.html` file should also be open in **Google Chrome**
-  * You should see nothing on the webpage right now, as the file is empty
-  * As we progress, you will see changes you make in the file show up on Chrome by refreshing the page
-
----
+* Open `index.html` in **Visual Studio Code**  
 
 ![inline](visual-studio-code.png)
 
 ---
 
-## Overview of how the web works
+# Setup
+
+* Also open `index.html` in **Google Chrome**
+
+![inline](start-screen.png)
+
+---
+
+# What is Visual Studio Code?
+
+Visual Studio Code is a text editor program (similar to Notepad or Microsoft Word) specifically designed for editing source code of computer programs. Some helpful features that you'll experience as you code today include:
+
+* Suggested autocompletion
+* Code highlighting
+
+
+---
+
+# How does the web work?
 Before writing code, let's provide a simplified view of what happens when you view a webpage in a web browser on your computer or phone.
 
 ---
@@ -88,7 +99,7 @@ For more information, go to [How the Web Works](https://developer.mozilla.org/en
 
 ---
 
-# Demo
+# Instructor Demo
 
 - Go to [tech.gov.sg](https://www.tech.gov.sg/)
 - Switch your internet connection off
@@ -261,7 +272,7 @@ What colors can I use? Find out [here](https://developer.mozilla.org/en-US/docs/
 
 ---
 
-# HTML - A quick recap
+# Recap
 
 * Webpages all require HTML files in your browser
 * HTML tells the browser what to display
@@ -303,6 +314,8 @@ async function insertLocation(event) {
 
 ---
 
+# Current code
+
 ```javascript
 var carparkLocation = document.getElementById("locationInput");
 
@@ -311,15 +324,12 @@ carparkLocation.addEventListener("keydown", insertLocation);
 
 ---
 
-[.code-highlight:1]
 ```javascript
 var carparkLocation = document.getElementById("locationInput");
-
-carparkLocation.addEventListener("keydown", insertLocation);
 ```
 
 - `var` stands for variable
-- a variable is a way to store information, like saving your word document
+- a variable is a way to store information, like saving a word document
 - We chose to name the variable `carparkLocation`
 - `document` refers to the HTML that is loaded on the browser.
 
@@ -327,18 +337,14 @@ We're trying to connect to the HTML `<input>` tag by using `getElementById`
 
 ---
 
-[.code-highlight:3]
-TODO: CHANGE 
 ```javascript
-var carparkLocation = document.getElementById("locationInput");
-
 carparkLocation.addEventListener("keydown", insertLocation);
 ```
-- Whenever the "keydown" event happens, run the `insertLocation` function. 
-- `addEventListener` is how we make Javascript listen for an event
-- Events include "mousedown", "mouseover", "keydown", "keyup", etc (more [here](https://developer.mozilla.org/en-US/docs/Web/Events))
-- Note that "keydown" does not mean the down arrow key, it means that when ANY key on the keyboard goes down 
 
+- Whenever a `"keydown"` happens, go and `insertLocation` 
+- `"keydown"` does not mean the down arrow key, it means that when ANY key on the keyboard goes down 
+
+<!-- other events include include "mousedown", "mouseover", "keydown", "keyup", etc (more [here](https://developer.mozilla.org/en-US/docs/Web/Events)) -->
 ---
 
 ```javascript
@@ -362,7 +368,7 @@ function makeBreakfast() {
 ```
 
 * `makeBreakfast` is the function name
-* `{` is used to denote the start of function, `}` to denote end
+* `{` is used to denote the start of function and `}` to denote end
 
 ---
 
@@ -419,9 +425,8 @@ async function insertLocation(event) {
   }
 }
 ```
-- we are using a conditional here (`if` statement)
-- TODO: Explain this better, why only one equal sign 
-- `===` means that we're checking equality
+- we are using a conditional here, the `if` statement
+- we use `===` to indicate that we're checking if they are equal because `=` was used to assign variables (see earlier)
 
 ---
 
@@ -434,6 +439,13 @@ async function insertLocation(event) {
 ```
 
 `carparkLocation.value` gets the text that the user has typed into the input box
+
+---
+
+# Recap
+
+* We have extracted information that the user has typed
+* We can display that information back to the user
 
 ---
 
@@ -451,7 +463,7 @@ async function insertLocation(event) {
 
 ---
 
-# Demo
+# Instructor Demo
 
 - See how to make a credit card charge with Stripe
 - See the latest weather on [data.gov.sg](https://data.gov.sg/dataset/realtime-weather-readings)
@@ -499,7 +511,7 @@ Some information or actions can only be provided by certain people/organisations
 
 ---
 
-# Demo
+# Instructor Demo
 - ensure that you have Python installed
 - run `python image-recognition.py` to see the facial recognition software
 
@@ -611,9 +623,8 @@ Structure the text that you want the user to see by choosing between the differe
 
 ---
 
-# Recap - Javascript
+# Recap
 
-* Javascript adds interaction
 * Javascript connects to HTML using `getElementById`
 * A function is a bunch of code that's grouped together
 * Calling a function runs the code in it
@@ -719,7 +730,6 @@ Import a font package from fonts.google.com
 
 ---
 
-# Recap
 
 | Term         | Metaphor | Function            |
 |--------------|----------|---------------------|
