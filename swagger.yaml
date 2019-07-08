@@ -1,0 +1,91 @@
+openapi: 3.0.1
+info:
+  title: "Nearest Carpark Info"
+  description: "APIs to find out nearest carpark info in Singapore. Relies on OneMaps's API for [location search](https://docs.onemap.sg/#search) and Data.gov.sg's API for [carpark availability](https://api.data.gov.sg/v1/transport/carpark-availability). Designed primarily for use in the Civil Service College's Understanding Web Development course run by [Open Government Products](open.gov.sg). Course materials available online [here](https://github.com/datagovsg/live-parking-info)"
+  version: 1.0.0
+servers:
+- url: "https://n36b2gu773.execute-api.ap-southeast-1.amazonaws.com/beta"
+paths:
+  /:
+    get:
+      summary: Show nearest carpark(s) to location
+      description: Show nearest carpark based on specified location
+      parameters:
+        - name: location
+          in: query
+          description: The location 
+          required: true
+          schema: 
+            type: string
+        - name: limit
+          in: query
+          description: The number of carparks desired
+          required: false
+          schema: 
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json: 
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/SingleCarparkLocation'
+                  - $ref: '#/components/schemas/MultipleCarparkLocations'
+                example:
+                  car_park_no: "J57"
+                  address: "BLK 131/134 JURONG GATEWAY ROAD"
+                  x_coord: "17516.6670"
+                  y_coord: "35130.0187"
+                  car_park_type: "SURFACE CAR PARK"
+                  type_of_parking_system: "ELECTRONIC PARKING"
+                  short_term_parking: "WHOLE DAY"
+                  free_parking: "NO"
+                  night_parking: "YES"
+                  car_park_decks: "0"
+                  gantry_height: "9.99"
+                  car_park_basement: "N"
+                  total_lots: "332"
+                  lots_available: "125"
+                  distance: 199.09566655989974
+
+components:
+  schemas:
+    SingleCarparkLocation:
+      type: object
+      properties:
+        car_park_no: 
+          type: string
+        address: 
+          type: string
+        x_coord: 
+          type: string
+        y_coord: 
+          type: string
+        car_park_type: 
+          type: string
+        type_of_parking_system: 
+          type: string
+        short_term_parking: 
+          type: string
+        free_parking: 
+          type: string
+        night_parking: 
+          type: string
+        car_park_decks:
+          type: string
+        gantry_height: 
+          type: string
+        car_park_basement:
+          type: string
+        total_lots: 
+          type: string
+        lots_available: 
+          type: string
+        distance: 
+          type: number
+    MultipleCarparkLocations:
+      type: array
+      items: 
+        $ref: '#/components/schemas/SingleCarparkLocation'
+  
