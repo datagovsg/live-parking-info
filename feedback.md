@@ -14,6 +14,18 @@
 - make sure that the content is easily copy-pasted over
 - explain more high level concepts, they don't need to write code, they just need to be able to speak to vendors more confidently
 
+Latest feedback from conversation with Doris, Director Executive Programs, CSC:
+- State explicitly the myths you want to debunk
+- It's helpful for people to type in code and see how the autocomplete helps you in programming
+- 
+- showing cause and effect with the code that they write
+- the big picture of how coding is done. What software are you using
+- there is a lot of software in the world, why do we use what we use?
+- download learn
+- Evan is working on something with David Eaves for directors and above
+- video the sharing, send it out
+- explain why your team is valuable through the course
+
 ## Feedback that has been addressed
 
 - Too many functions and functions calling other functions? You can tell by their questions that they don't know what's happening and just want their program to work.

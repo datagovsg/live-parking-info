@@ -1,8 +1,4 @@
-const express = require("express");
-const app = express();
-const port = 3000;
 const axios = require("axios");
-const cors = require("cors");
 const parse = require("csv-parse/lib/sync");
 const fs = require("fs");
 
@@ -13,16 +9,7 @@ const carparkStaticInfo = parse(hdbCarparkInfoCSV, {
   skip_empty_lines: true
 });
 
-console.log(
-  `Carpark static info imported with ${carparkStaticInfo.length} carparks!`
-);
-
-app.use(cors());
-
-app.listen(port, async () => {
-  console.log(`Parking API app listening on port ${port}!`);
-
-  async function updateCarparkAvailability() {
+exports.handler = async function(event, context) {
     console.log("Updating carpark availability on server");
     const carparkAvailability = await axios
       .get("https://api.data.gov.sg/v1/transport/carpark-availability", {})
@@ -31,12 +18,17 @@ app.listen(port, async () => {
         return carparkAvailability;
       });
     const carparks = combineCarparkData(carparkAvailability, carparkStaticInfo);
-    app.locals.carparks = carparks;
-    setTimeout(updateCarparkAvailability, 1000 * 60);
-  }
-  updateCarparkAvailability();
-});
 
+    if (event.queryStringParameters) {
+      event = event.queryStringParameters;
+    }
+        console.log(
+          `Request with following parameters ${JSON.stringify(
+            event,
+            null,
+            2
+          )}`
+        );
 function combineCarparkData(carparkAvailability, carparks) {
   function findMatchingCarpark(carparkNumber, carparks) {
     matchedCarpark = null;
@@ -61,7 +53,7 @@ function combineCarparkData(carparkAvailability, carparks) {
 }
 
 async function getCarparkList(x, y) {
-  function addDistanceToCarparks(carparks, x, y) {
+    function addDistanceToCarparks(x, y) {
     function distanceFromXY(carpark, x, y) {
       const x2 = Math.pow(parseFloat(carpark.x_coord) - x, 2);
       const y2 = Math.pow(parseFloat(carpark.y_coord) - y, 2);
@@ -94,21 +86,19 @@ async function getCarparkList(x, y) {
   }
 
   // Calculate distance of every carpark to x and y
-  const carparksWithDistance = addDistanceToCarparks(app.locals.carparks, x, y);
+    const carparksWithDistance = addDistanceToCarparks(x, y);
 
   // Get the nearest n carparks
   const sortedCarparks = sortCarparksByDistance(carparksWithDistance);
   return sortedCarparks;
 }
 
-app.get("/", async (req, res) => {
-  console.log(`Request with following parameters ${JSON.stringify(req.query)}`);
-  axios
+  const responseCarparks = await axios
     .get("https://developers.onemap.sg/commonapi/search", {
       params: {
         getAddrDetails: "N",
         returnGeom: "Y",
-        searchVal: req.query.q
+        searchVal: event.location
       }
     })
     .then(response => {
@@ -116,16 +106,21 @@ app.get("/", async (req, res) => {
     })
     .then(location => {
       return getCarparkList(location.X, location.Y);
-    })
-    .then(carparks => {
-      return res.send(
-        req.query.limit && req.query.limit > 1
-          ? carparks.slice(0, req.query.limit)
-          : carparks[0]
-      );
-    })
-    .catch(error => {
-      console.error(error);
-      res.status(500).send(error);
-    });
 });
+
+  // format specified on https://aws.amazon.com/premiumsupport/knowledge-center/malformed-502-api-gateway/
+  const APIGatewayResponse = {
+    statusCode: 200,
+    // https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-cors.html
+    headers: {
+      "Access-Control-Allow-Origin": "*"
+    },
+    body: JSON.stringify(
+      event.limit && event.limit > 1
+        ? responseCarparks.slice(0, event.limit)
+        : responseCarparks[0]
+    ),
+    isBase64Encoded: false
+  };
+  return APIGatewayResponse;
+};
