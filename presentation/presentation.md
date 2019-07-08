@@ -532,7 +532,7 @@ Some information or actions can only be provided by certain people/organisations
 ```javascript
 async function insertLocation(event) {
   if (event.key === "Enter") {
-    var carparkResponse = await axios.get("http://localhost:3000?q=jurong")
+    var carparkResponse = await axios.get("https://n36b2gu773.execute-api.ap-southeast-1.amazonaws.com/beta?location=jurong")
   }
 }
 ```
@@ -545,7 +545,7 @@ async function insertLocation(event) {
 ```javascript
 async function insertLocation(event) {
   if (event.key === "Enter") {
-    var carparkResponse = await axios.get("http://localhost:3000?q=jurong")
+    var carparkResponse = await axios.get("https://n36b2gu773.execute-api.ap-southeast-1.amazonaws.com/beta?location=jurong")
     alert(carparkResponse)
   }
 }
@@ -558,7 +558,7 @@ async function insertLocation(event) {
 ```javascript
 async function insertLocation(event) {
   if (event.key === "Enter") {
-    var carparkResponse = await axios.get("http://localhost:3000?q=jurong")
+    var carparkResponse = await axios.get("https://n36b2gu773.execute-api.ap-southeast-1.amazonaws.com/beta?location=jurong")
     console.log(carparkResponse.data)
   }
 }
@@ -572,7 +572,7 @@ async function insertLocation(event) {
 ```javascript
 async function insertLocation(event) {
   if (event.key === "Enter") {
-    var carparkResponse = await axios.get("http://localhost:3000?q=" + carparkLocation.value)
+    var carparkResponse = await axios.get("https://n36b2gu773.execute-api.ap-southeast-1.amazonaws.com/beta?location=" + carparkLocation.value)
     console.log(carparkResponse.data)
   }
 }
@@ -595,7 +595,7 @@ Let's fetch data based on what the user types in
 ```javascript
 async function insertLocation(event) {
   if (event.key === "Enter") {
-    var carparkResponse = await axios.get("http://localhost:3000?q=" + carparkLocation.value)
+    var carparkResponse = await axios.get("https://n36b2gu773.execute-api.ap-southeast-1.amazonaws.com/beta?location=" + carparkLocation.value)
     var carpark = carparkResponse.data
     document.getElementById("carparkInfo").innerText = carpark.address
   }
@@ -613,7 +613,7 @@ async function insertLocation(event) {
 ```javascript
 async function insertLocation(event) {
   if (event.key === "Enter") {
-    var carparkResponse = await axios.get("http://localhost:3000?q=" + carparkLocation.value)
+    var carparkResponse = await axios.get("https://n36b2gu773.execute-api.ap-southeast-1.amazonaws.com/beta?location=" + carparkLocation.value)
     var carpark = carparkResponse.data
     document.getElementById("carparkInfo").innerText = carpark.lots_available + " lots available at " + carpark.address
   }
