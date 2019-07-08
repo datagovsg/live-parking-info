@@ -30,8 +30,6 @@ We have now abstracted both API calls and implementation logic away from the par
 
 For participant consumption, we have deployed the `index.js` file on AWS Lambda, a functions as a service or serverless cloud solution (Note: run `zip -r lambda.zip node_modules/ index.js hdb-carpark-information.csv` to create the zip file for uploading). In order to make the lambda function accessible to the world, we set up AWS API Gateway so that participants can use HTTP GET method to interact with the function.
 
-Documentation for the API is available [here](https://opengovsg.github.io/live-parking-info/) file.
-
 ## Attribution
 
 This course is distributed under the MIT license. While you are free to use it and create derivative works as you see fit, 
