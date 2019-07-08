@@ -20,17 +20,17 @@ Have the following installed before starting the course:
     - Have a JSON Formatter/parser extension installed
 - This repository (click on the green "Clone or Download" button on the top right hand corner)
 
-### API Design
+## Nearest Carpark available API
 
-This repository also contains the API that participants use during the course. We designed it based on feedback from participants across successive runs. We found that the API section was quite tough and we would lose a lot of participant interest during that section. 
+In addition to course content, this repository contains the API that participants use during the course (documentation [here](https://opengovsg.github.io/live-parking-info/)). 
 
-One of the goals of the course was to let participants walk away with a website that they created by the end of the course. This strong sense of empowerment, we believe, would spur them on to find out more about web development beyond the course. In order to find out the nearest carpark to you, you'd need to use OneMap's API to find out the X and Y coordinates of your current location, data.gov.sg's API to find out an exhaustive list of all carparks in Singapore, search through that whole list to find which is closest. That was a lot of logic that participants would have to reason about.
+One of the goals of the course was to let participants walk away with a website that they created by the end of the course. This strong sense of empowerment, we believe, would spur them on to find out more about web development beyond the course. However, we realized across multiple runs that our API section would be quite tough for participants and leave them confused instead of enlightened. In order to find out the nearest carpark to you, you'd need to get the X and Y coordinates of your location from OneMap's API and an exhasutive list of carparks and availability from Data.gov.sg's API to calculate which carpark is closest to you.
 
-We have now abstracted both APIs and implementation logic away from the participants and presented them with only one simple API call, similar to the [Chuck Norris Joke API](https://api.chucknorris.io/) that is used in other web introductory courses. The code for the API can be viewed in `index.js` file and the API design can be seen in the swagger.yml file.
+We have now abstracted both API calls and implementation logic away from the participants and presented them with one simple API call, similar to the [Chuck Norris Joke API](https://api.chucknorris.io/) that is used in other web introductory courses. The code for the API can be viewed in `index.js` file and the API documentation can be edited in the `swagger.yml` file.
 
-We have deployed the `index.js` file on AWS Lambda, a functions as a service or serverless cloud solution. Before deploying, make sure to run `zip -r lambda.zip node_modules/ index.js hdb-carpark-information.csv` to create the zip file for uploading. In order to make the lambda function accessible to the world, we set up HTTP proxy on AWS API Gateway so that participants can access it easily.
+For participant consumption, we have deployed the `index.js` file on AWS Lambda, a functions as a service or serverless cloud solution (Note: run `zip -r lambda.zip node_modules/ index.js hdb-carpark-information.csv` to create the zip file for uploading). In order to make the lambda function accessible to the world, we set up AWS API Gateway so that participants can use HTTP GET method to interact with the function.
 
-Documentation for the API is available in `swagger.yml` file. To make edits and see it displayed locally, make sure to run `http-server`.
+Documentation for the API is available [here](https://opengovsg.github.io/live-parking-info/) file.
 
 ## Attribution
 
