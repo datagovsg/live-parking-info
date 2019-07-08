@@ -31,3 +31,13 @@ We have now abstracted both APIs and implementation logic away from the particip
 We have deployed the `index.js` file on AWS Lambda, a functions as a service or serverless cloud solution. Before deploying, make sure to run `zip -r lambda.zip node_modules/ index.js hdb-carpark-information.csv` to create the zip file for uploading. In order to make the lambda function accessible to the world, we set up HTTP proxy on AWS API Gateway so that participants can access it easily.
 
 Documentation for the API is available in `swagger.yml` file. To make edits and see it displayed locally, make sure to run `http-server`.
+
+## Attribution
+
+This course is distributed under the MIT license. While you are free to use it and create derivative works as you see fit, 
+we would love to be duly attributed. This could be done by flashing a slide at the workshop that describes who we are, accompanied with a short verbal statement crediting us as the original authors.
+
+## Get in touch
+
+If you are interested in working with us to improve digital literacy in government and the nation, 
+we would love to hear from you! Reach us at https://open.gov.sg/contact-us/
