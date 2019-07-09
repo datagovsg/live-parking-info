@@ -1,3 +1,18 @@
+# TODOs
+
+PRs welcome!
+- explicitly state why things may be easy to do versus hard. Explicitly say that. Don’t be sheepish about it
+- show them the backend just for fun, the index.js file which is super complicated. They need to be humbled in some part.
+- why do we use ” and when do we not?
+- input breaking down
+- please extract zip files
+- what’s the difference? Is there a diff? We learned it in one chunk
+- figuring things out on the computer requires perseverance. It’s hard. People may not be willing to put in the effort
+- can we get to the point where they can do small task?
+- change the course descriptIno
+- change the money required to pay for the course
+
+
 # Feedback collated from instructors
 
 # Reflections and lessons learned
