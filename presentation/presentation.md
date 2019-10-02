@@ -1,5 +1,5 @@
 slidenumbers: true
-<!-- Rendered using Deckset -->
+<!-- Rendered using Deckset, simple theme -->
 
 # Understanding Web Development
 
@@ -18,10 +18,14 @@ slidenumbers: true
 
 # What to expect
 
-This is a fast paced introduction to web technologies that covers a lot of ground in a very short time. 
+This is a **fast paced introduction** to web technologies that covers a lot of ground in a very short time. 
 
 * We don't expect you to walk out as proficient coders, only with an appreciation of how websites work
 * We encourage you to experiment and to ask questions
+
+---
+
+# Don't need to take photos! 
 
 All material is available online at [github.com/opengovsg/live-parking-info](https://github.com/opengovsg/live-parking-info)
 
@@ -352,7 +356,7 @@ async function insertLocation(event) {
     alert(1 + 2);
 }
 ```
-Javascript can do computation
+Javascript can do computation, unlike HTML
 
 ---
 
@@ -719,7 +723,7 @@ Import a font package from fonts.google.com
 
 ---
 
-### Mobile responsiveness is not hard to do
+## Mobile responsiveness is not hard to do
 
 ---
 
@@ -756,7 +760,7 @@ Import a font package from fonts.google.com
 
 ---
 
-# Cloud deployments do not need to be hard or expensive
+## Cloud deployments do not need to be hard or expensive
 
 ---
 
