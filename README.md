@@ -68,6 +68,40 @@ We have now abstracted both API calls and implementation logic away from the par
 
 For participant and public consumption, we have deployed the `index.js` file on AWS Lambda, a functions as a service or serverless cloud solution (Note: run `zip -r lambda.zip node_modules/ index.js hdb-carpark-information.csv` to create the zip file for uploading). In order to make the lambda function accessible to the world, we set up AWS API Gateway so that participants can use HTTP GET method to interact with the function.
 
+### Lesson breakdown
+
+Introduction:
+- Slides 1-11
+- Natural stopping points: 10
+- Estimated time required: 15mins
+
+Client/server model, HTML
+- Slides 12-28
+- Natural stopping points: 21, 23, 25, 28
+- Estimated time required: 20mins
+
+JS 
+- Slides 29-45
+- Natural stopping points: 34, 39, 45
+- Estimated time required: 25 mins
+
+APIs 
+- Slides 46-64
+- Natural stopping points: 59, 60, 61, 63, 64
+- Estimated time required: 40 mins
+
+CSS 
+- Slides 66-72
+- Natural stopping points: 67, 68, 69, 70, 71
+- Estimated time required: 20 mins
+
+Deployment 
+- Slides 73-76
+- Natural stopping point: 76
+- Estimated time required: 10 mins
+
+Total estimated time for the course: 2 hours, 10 mins
+
 ## Next steps 
 
 ## Attribution
