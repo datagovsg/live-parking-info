@@ -11,7 +11,6 @@ If you have any feedback to provide, or are interested in collaborating, [reach 
 - presentation: The presentation used during the course 
   - image-recognition: OpenCV demo using Python
   - final-product: What you'll have at the end of the course
-- dist: Swagger API documentation files that can be viewed on https://opengovsg.github.io/live-parking-info
 
 ### Pre-requisites
 Have the following installed before starting the course:
@@ -60,13 +59,9 @@ Have the following installed before starting the course:
 
 ### API Design and Implementation
 
-In addition to course content, this repository contains the API that participants use during the course (documentation [here](https://opengovsg.github.io/live-parking-info/)). 
+In addition to course content, this repository contains the API that participants use during the course (documentation [here](https://opengovsg.github.io/carparks-near-me/)). 
 
 One of the goals of the course was to let participants walk away with a website that they created by the end of the course. This strong sense of empowerment, we believe, would spur them on to find out more about web development beyond the course. However, we realized across multiple runs that our API section would be quite tough for participants and leave them confused instead of enlightened. In order to find out the nearest carpark to you, you'd need to get the X and Y coordinates of your location from OneMap's API and an exhasutive list of carparks and availability from Data.gov.sg's API to calculate which carpark is closest to you.
-
-We have now abstracted both API calls and implementation logic away from the participants and presented them with one simple API call, similar to the [Chuck Norris Joke API](https://api.chucknorris.io/) that is used in other web introductory courses. The code for the API can be viewed in `index.js` file and the API documentation can be edited in the `swagger.yml` file.
-
-For participant and public consumption, we have deployed the `index.js` file on AWS Lambda, a functions as a service or serverless cloud solution (Note: run `zip -r lambda.zip node_modules/ index.js hdb-carpark-information.csv` to create the zip file for uploading). In order to make the lambda function accessible to the world, we set up AWS API Gateway so that participants can use HTTP GET method to interact with the function.
 
 ### Lesson breakdown
 
@@ -111,5 +106,5 @@ we would love to be duly attributed. This could be done by flashing a slide at t
 
 ## Get in touch
 
-If you are interested in working with us to improve digital literacy in government and the nation, 
+If you are interested in working with us to improve tech literacy in government and the nation, 
 we would love to hear from you! Reach us at https://open.gov.sg/contact-us/
