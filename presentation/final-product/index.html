@@ -20,7 +20,7 @@
   async function insertLocation(event) {
     if (event.key === "Enter") {
       var carparkResponse = await axios.get(
-        "https://n36b2gu773.execute-api.ap-southeast-1.amazonaws.com/beta?location=" + carparkLocation.value + "&limit=1"
+        "https://carparks-near-me.herokuapp.com?location=" + carparkLocation.value + "&limit=1"
       );
       var carpark = carparkResponse.data;
       console.log(carpark);
