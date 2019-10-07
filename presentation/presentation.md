@@ -18,7 +18,7 @@ slidenumbers: true
 
 # What to expect
 
-This is a **fast paced introduction** to web technologies that covers a lot of ground in a very short time. 
+This is a **fast paced introduction** to web technologies that covers a lot of ground in a short time. 
 
 * We don't expect you to walk out as proficient coders, only with an appreciation of how websites work
 * We encourage you to experiment and to ask questions
@@ -47,18 +47,17 @@ All material is available online at [github.com/opengovsg/live-parking-info](htt
 
 ---
 
-# Where to find material on your computer
+# Install the following to get started
 
-* Refer to `presentation/presentation.pdf` for the slides
-* Go into `student [start here]/` folder to get started
+- Visual Studio Code [code.visualstudio.com/download](https://code.visualstudio.com/download)
+- Google Chrome [chrome.com](https://www.google.com/chrome/)
+- The starter code [github.com/opengovsg/live-parking-info](https://github.com/opengovsg/live-parking-info)
 
 ---
 
 # Setup
 
-* Open `index.html` in **Visual Studio Code**  
-
-![inline](visual-studio-code.png)
+* Open the slides in `presentation/presentation.pdf`
 
 ---
 
@@ -70,6 +69,14 @@ All material is available online at [github.com/opengovsg/live-parking-info](htt
 
 ---
 
+# Setup
+
+* Open `student [start here]/index.html` in **Visual Studio Code**  
+
+![inline](vscode.png)
+
+---
+
 # What is Visual Studio Code?
 
 Visual Studio Code is a text editor program (similar to Notepad or Microsoft Word) specifically designed for editing source code of computer programs. Some helpful features that you'll experience as you code today include:
@@ -77,10 +84,10 @@ Visual Studio Code is a text editor program (similar to Notepad or Microsoft Wor
 * Suggested autocompletion
 * Code highlighting
 
-
 ---
 
 # How does the web work?
+
 Before writing code, let's provide a simplified view of what happens when you view a webpage in a web browser on your computer or phone.
 
 ---
@@ -103,9 +110,16 @@ For more information, go to [How the Web Works](https://developer.mozilla.org/en
 
 ---
 
-# Instructor Demo
+# Websites are simply files
 
-- Go to [tech.gov.sg](https://www.tech.gov.sg/)
+- Your website exists only on your client (your computer), so that change is only visible to you. 
+- The fact that you were able to make changes shows that these are simply text files on your computer
+
+---
+
+# Follow along
+
+- Go to [tech.gov.sg](https://www.tech.gov.sg/) or a website of your choice
 - Switch your internet connection off
 - Right click on the webpage and select "Inspect"
 - Type CMD + SHIFT + C or click on "Select element" icon
@@ -114,19 +128,12 @@ For more information, go to [How the Web Works](https://developer.mozilla.org/en
 
 --- 
 
-# Websites are simply files
-
-- Your website exists only on your client (your computer), so that change is only visible to you. 
-- The fact that you were able to make changes shows that these are simply text files on your computer
-
----
-
 # What does a webpage consist of?
 
 | Term         | Metaphor | Function            |
 |--------------|----------|---------------------|
 | HTML         | Skeleton | Structure           |
-| CSS | Skin / Clothes     | Styling, formatting |
+| CSS | Skin / Clothes    | Styling, formatting |
 | Javascript   | Brain    | Behaviour/actions   |
 
 <!-- alternate analogy of a house, with structure, interior design, and smarts -->
@@ -162,7 +169,6 @@ For more information, go to [How the Web Works](https://developer.mozilla.org/en
   <title>Website title here</title>
 </head>
 ```
-
 
 * `<title>` is the opening tag for the page's content and `</title>` is the closing tag
 * Modify the website title
@@ -310,7 +316,12 @@ async function insertLocation(event) {
     alert("You typed something!");
 }
 ```
-`alert` creates a pop up on your screen. When does it run?
+
+`alert` creates a pop up on your screen. Refresh the page and try to make it run
+
+---
+
+# When does it run?
 
 ---
 
@@ -516,10 +527,11 @@ Some information or actions can only be provided by certain people/organisations
 ---
 
 # Instructor Demo
-- ensure that you have Python installed
-- run `python image-recognition.py` to see the facial recognition software
+- run `python demo.py` to see the facial recognition software
 
 ---
+
+# Axios library
 
 [.code-highlight: 1-3]
 ```html
@@ -554,28 +566,15 @@ async function insertLocation(event) {
 
 ---
 
-```javascript
-async function insertLocation(event) {
-  if (event.key === "Enter") {
-    var carparkResponse = await axios.get("https://carparks-near-me.herokuapp.com?location=jurong")
-    alert(carparkResponse)
-  }
-}
-```
-* Let's display data fetched from the API
-
----
-
 [.code-highlight:4]
 ```javascript
 async function insertLocation(event) {
   if (event.key === "Enter") {
     var carparkResponse = await axios.get("https://carparks-near-me.herokuapp.com?location=jurong")
-    console.log(carparkResponse.data)
+    console.log(carparkResponse)
   }
 }
 ```
-- We see `[object Object]` in the pop up. That's not what we want to see.
 - In order to see all the info, we need to use the "Console"
 - Right click, select "Inspect", and click on the `Console` tab
 
@@ -728,10 +727,6 @@ Import a font package from fonts.google.com
 ```
 
 `@media` query: checking for screen size and then defining a specific style for the element
-
----
-
-## Mobile responsiveness is not hard to do
 
 ---
 
