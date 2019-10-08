@@ -18,7 +18,7 @@ slidenumbers: true
 
 # What to expect
 
-This is a **fast paced introduction** to web technologies that covers a lot of ground in a short time. 
+This is a **hands on introduction** to web technologies that covers a lot of ground in a short time. 
 
 * We don't expect you to walk out as proficient coders, only with an appreciation of how websites work
 * We encourage you to experiment and to ask questions
@@ -119,12 +119,11 @@ For more information, go to [How the Web Works](https://developer.mozilla.org/en
 
 # Follow along
 
-- Go to [tech.gov.sg](https://www.tech.gov.sg/) or a website of your choice
-- Switch your internet connection off
+- Go to [tech.gov.sg](https://www.tech.gov.sg/) or any website of your choice
 - Right click on the webpage and select "Inspect"
 - Type CMD + SHIFT + C or click on "Select element" icon
-- Select the hero banner text
-- Modify the content of that banner
+- Select any text
+- Modify the content within it
 
 --- 
 
@@ -157,7 +156,8 @@ For more information, go to [How the Web Works](https://developer.mozilla.org/en
 
 ## <h1> What is Markup Language? </h1>
 
-<p>A system for annotating a document in a way that is syntactically distinguishable from the text. </p>
+\<p> A system for annotating a document in a way that is syntactically distinguishable from the text. </p>
+
 ![inline](html.png)
 
 ---
@@ -175,20 +175,6 @@ For more information, go to [How the Web Works](https://developer.mozilla.org/en
 
 ---
 
-
-[.code-highlight:2,3,5]
-```html
-<body>
-  <h1>Your header here</h1>
-  <input id="locationInput" placeholder="Your prompt here" />
-
-  <p id="carparkInfo">Paragraph of text here</p>
-</body>
-```
-Change your header, placeholder, and paragraph text
-
----
-
 [.code-highlight:2]
 ```html
 <body>
@@ -200,9 +186,6 @@ Change your header, placeholder, and paragraph text
 ```
 
 * The `h1` tag makes the content inside become a **header**
-* Try using `h2` instead and see the difference
-
-<!-- Tell them about h1-6 tags -->
 
 ---
 
@@ -250,35 +233,40 @@ Change your header, placeholder, and paragraph text
 
 ---
 
-# A short detour
 
-Adding styles to your page!
-
-[.code-highlight:1]
+[.code-highlight:2,3,5]
 ```html
-<body style="background-color: lightskyblue">
+<body>
   <h1>Your header here</h1>
   <input id="locationInput" placeholder="Your prompt here" />
 
   <p id="carparkInfo">Paragraph of text here</p>
 </body>
 ```
+Change your header, placeholder, and paragraph text
+
+---
+
+# A short detour
+
+Adding styles to your page!
+
+```css
+body {
+  color: lightgrey;
+  background-color: blue;
+}
+```
 
 What colors can I use? Find out [here](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)
 
 ---
 
-# More color
+# Choose from millions of colors!
 
-[.code-highlight:5]
-```html
-<body style="background-color: lightskyblue">
-  <h1>Your header here</h1>
-  <input id="locationInput" placeholder="Your prompt here" />
+Hover over the color and wait for this to pop out
 
-  <p id="carparkInfo" style="color:red">Paragraph of text here</p>
-</body>
-```
+![inline](color-picker.png)
 
 ---
 
@@ -375,61 +363,17 @@ Javascript can do computation, unlike HTML
 
 * Functions are like recipes - they're a way to group some instructions together
 
-```javascript
-function makeBreakfast() {
-  makeMilo();
-  makeKayaToast();
-}
-```
-
-* `makeBreakfast` is the function name
-* `{` is used to denote the start of function and `}` to denote end
-
 ---
 
-# Introducing functions
-
-* Functions are like recipes - they're a way to group some instructions together
-
-```javascript
-function makeBreakfast(miloPowder, kayaJam, bread) {
-  makeMilo(miloPowder);
-  makeKayaToast(kayaJam, bread);
-}
-```
-
-* `miloPowder`, `kayaJam` and `bread` are the function inputs
-* `(` denotes the start of function inputs and `)` denotes the end
-
----
-
-# Why use functions?
-
-```javascript
-function makeBreakfast(miloPowder, kayaJam, bread) {
-  makeMilo(miloPowder);
-  makeKayaToast(kayaJam, bread);
-}
-```
-
-* Functions are a way to remember code and make it easily repeated
-* Monday morning, all you have to do is `makeBreakfast()`
-* Tueday morning, once again, all you have to do is `makeBreakfast()`
-
----
-
-# Functions
-
-[.code-highlight:1,3]
 ```javascript
 async function insertLocation(event) {
-    alert("You typed something!");
+    alert(1 + 2);
 }
 ```
 
-- write the `function` keyword
-- name it (in this example `insertLocation`)
-- write your code between the `{` and `}` brackets
+* `insertLocation` is the function name
+* `event` is the function input
+* `{` is used to denote the start of function and `}` to denote end
 
 ---
 
@@ -441,7 +385,7 @@ async function insertLocation(event) {
 }
 ```
 - we are using a conditional here, the `if` statement
-- we use `===` to indicate that we're checking if they are equal because `=` was used to assign variables (see earlier)
+- we use `===` to indicate that we're checking if they are equal because `=` was used to assign variables
 
 ---
 
@@ -454,6 +398,28 @@ async function insertLocation(event) {
 ```
 
 `carparkLocation.value` gets the text that the user has typed into the input box
+
+---
+
+# Do you find the pop ups annoying?
+
+* We want to display the user typed information back to them
+* We can do that by using Javascript to:
+  1. Find the `<p>` tag in the document
+  1. Change the text inside
+* We already gave the <p> tag the `carparkInfo` id in our HTML code
+
+---
+
+```javascript
+async function insertLocation(event) {
+  if (event.key === "Enter") {
+    document.getElementById("carparkInfo").innerText = carparkLocation.value;
+  }
+}
+```
+
+`innerText` will change the text in that element to the value of carparkLocation.value
 
 ---
 
@@ -482,14 +448,6 @@ async function insertLocation(event) {
 
 - See how to make a credit card charge with Stripe
 - See the latest weather on [data.gov.sg](https://data.gov.sg/dataset/realtime-weather-readings)
-
----
-
-# How do we make an API call?
-
-* We need the help of a request library
-* A library is a set of functions that someone else has written
-* Like using tools that a wise man created
 
 ---
 
@@ -531,6 +489,14 @@ Some information or actions can only be provided by certain people/organisations
 
 ---
 
+# How do we make an API call?
+
+* We need the help of a request library
+* A library is a set of functions that someone else has written
+* It's just like using tools that a wise man created
+
+---
+
 # Axios library
 
 [.code-highlight: 1-3]
@@ -542,6 +508,14 @@ Some information or actions can only be provided by certain people/organisations
 
 * We'll be using the `axios` library to retrieve information
 * Click on the link to see the code that we're using
+
+---
+
+# Why do you trust this library?
+
+See how many people are using this library at [npmjs.com/package/axios](https://www.npmjs.com/package/axios)
+
+![inline](axios-downloads.png)
 
 ---
 
@@ -589,16 +563,6 @@ async function insertLocation(event) {
 }
 ```
 Let's fetch data based on what the user types in
-
----
-
-# Displaying info to user
-
-* We need to be able to display the address that we get from the API call
-* We can do that by using Javascript to:
-  1. Find the `<p>` tag in the document
-  1. Change the text inside
-* We already gave the <p> tag the `carparkInfo` id in our HTML code
 
 ---
 
@@ -784,9 +748,10 @@ Import a font package from fonts.google.com
 
 # Challenge Mode
 
-If you're done and would like a little more of a challenge, try doing these:
+For more of a challenge, try these:
 
 - Change the background to another image
-- Loading information takes time. Is there any way we can give the user visual feedback while they're waiting?
-- Can we show additional information for the nearest carpark? Can we display an icon based on carpark type?
-- Can we show the three nearest carparks instead of only one?
+- Can we give the user some visual indication that information is loading?
+- Can we show additional information for the nearest carpark? 
+- Can we display an icon based on carpark type?
+- Can we show the two nearest carparks instead of only one?
